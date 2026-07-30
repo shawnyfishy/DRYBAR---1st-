@@ -1,0 +1,1373 @@
+{
+  "step1": {
+    "eval1_gsap": false,
+    "eval1_gsapVersion": null,
+    "eval2_animationKeys": [
+      "scrollbars",
+      "scrollX",
+      "scrollY",
+      "onscroll",
+      "onscrollend",
+      "scroll",
+      "scrollBy",
+      "scrollTo",
+      "ondevicemotion",
+      "onscrollsnapchange",
+      "onscrollsnapchanging",
+      "gsapVersions",
+      "lenisVersion",
+      "_gsap",
+      "_scrollTop",
+      "_scrollLeft"
+    ],
+    "eval3_isNuxt": false,
+    "eval4_resourceJs": [
+      "https://embeds.iubenda.com/widgets/c23011f9-1c15-45e5-aabf-20afefa3d1f8.js",
+      "https://www.9to5studio.it/_nuxt/Bben5wXQ.js",
+      "https://www.9to5studio.it/_nuxt/Cl4vKIPn.js",
+      "https://www.9to5studio.it/_nuxt/BuDleb2b.js",
+      "https://www.9to5studio.it/_nuxt/YJATDatz.js",
+      "https://www.9to5studio.it/_nuxt/Dn9LV3QW.js",
+      "https://www.9to5studio.it/_nuxt/ajvS-jm2.js",
+      "https://www.9to5studio.it/_nuxt/CRM2Rzh_.js",
+      "https://www.9to5studio.it/_nuxt/Duh89kIH.js",
+      "https://www.9to5studio.it/_nuxt/BcbzvQO3.js",
+      "https://www.9to5studio.it/_nuxt/DGvKOPmf.js",
+      "https://www.9to5studio.it/_nuxt/C8xy95f-.js",
+      "https://www.9to5studio.it/_nuxt/Ct5eJM-i.js",
+      "https://www.9to5studio.it/_nuxt/CPBF00s8.js",
+      "https://www.9to5studio.it/_nuxt/CstAHaFe.js",
+      "https://www.9to5studio.it/_nuxt/CpTUMpsg.js",
+      "https://www.9to5studio.it/_nuxt/Cc-Oxk-y.js",
+      "https://www.9to5studio.it/_nuxt/Cr82dgH5.js",
+      "https://www.9to5studio.it/_nuxt/9yVPcdfY.js",
+      "https://www.9to5studio.it/_nuxt/DTpn8FuD.js",
+      "https://www.9to5studio.it/_nuxt/B061fY88.js",
+      "https://cdn.iubenda.com/cookie_solution/iubenda_cs/1.102.2/core-it.js",
+      "https://www.9to5studio.it/_nuxt/Cz7cIIMQ.js",
+      "https://www.9to5studio.it/_nuxt/BHePjSJw.js",
+      "https://www.9to5studio.it/_nuxt/lAPiuOn4.js",
+      "https://www.9to5studio.it/_nuxt/Co_54TLA.js",
+      "https://www.9to5studio.it/_nuxt/A9xXcwtT.js",
+      "https://www.9to5studio.it/_nuxt/DbLYRMAW.js",
+      "https://www.9to5studio.it/_nuxt/DShXnD8G.js",
+      "https://www.9to5studio.it/_nuxt/BODfxlAM.js",
+      "https://www.9to5studio.it/_nuxt/B15b-p36.js",
+      "https://www.9to5studio.it/_nuxt/BlV8s8y2.js"
+    ],
+    "eval5_scrollElementsCount": 0,
+    "eval6_scrollBehavior": "auto",
+    "gsapPlugins": [],
+    "lenisInstance": null,
+    "networkJsBundles": [
+      "https://embeds.iubenda.com/widgets/c23011f9-1c15-45e5-aabf-20afefa3d1f8.js",
+      "https://www.9to5studio.it/_nuxt/BcbzvQO3.js",
+      "https://www.9to5studio.it/_nuxt/Cl4vKIPn.js",
+      "https://www.9to5studio.it/_nuxt/9yVPcdfY.js",
+      "https://www.9to5studio.it/_nuxt/B15b-p36.js",
+      "https://www.9to5studio.it/_nuxt/CPBF00s8.js",
+      "https://www.9to5studio.it/_nuxt/BuDleb2b.js",
+      "https://www.9to5studio.it/_nuxt/BlV8s8y2.js",
+      "https://www.9to5studio.it/_nuxt/Co_54TLA.js",
+      "https://www.9to5studio.it/_nuxt/Cc-Oxk-y.js",
+      "https://www.9to5studio.it/_nuxt/Dn9LV3QW.js",
+      "https://www.9to5studio.it/_nuxt/Bben5wXQ.js",
+      "https://www.9to5studio.it/_nuxt/YJATDatz.js",
+      "https://www.9to5studio.it/_nuxt/ajvS-jm2.js",
+      "https://www.9to5studio.it/_nuxt/DShXnD8G.js",
+      "https://www.9to5studio.it/_nuxt/CRM2Rzh_.js",
+      "https://www.9to5studio.it/_nuxt/Cz7cIIMQ.js",
+      "https://www.9to5studio.it/_nuxt/Cr82dgH5.js",
+      "https://www.9to5studio.it/_nuxt/CpTUMpsg.js",
+      "https://www.9to5studio.it/_nuxt/lAPiuOn4.js",
+      "https://www.9to5studio.it/_nuxt/DTpn8FuD.js",
+      "https://www.9to5studio.it/_nuxt/DbLYRMAW.js",
+      "https://www.9to5studio.it/_nuxt/A9xXcwtT.js",
+      "https://www.9to5studio.it/_nuxt/BHePjSJw.js",
+      "https://www.9to5studio.it/_nuxt/CstAHaFe.js",
+      "https://www.9to5studio.it/_nuxt/Duh89kIH.js",
+      "https://www.9to5studio.it/_nuxt/DGvKOPmf.js",
+      "https://www.9to5studio.it/_nuxt/BODfxlAM.js",
+      "https://www.9to5studio.it/_nuxt/Ct5eJM-i.js",
+      "https://cdn.iubenda.com/cookie_solution/iubenda_cs/1.102.2/core-it.js",
+      "https://www.9to5studio.it/_nuxt/C8xy95f-.js",
+      "https://www.9to5studio.it/_nuxt/B061fY88.js"
+    ],
+    "networkCssBundles": [
+      "https://www.9to5studio.it/_nuxt/useAsyncGraphqlQuery.DcMyb5Pi.css",
+      "https://www.9to5studio.it/_nuxt/DynamicZone.Cf5raCz4.css",
+      "https://www.9to5studio.it/_nuxt/nuxt-icon.Cvbtxq7p.css",
+      "https://www.9to5studio.it/_nuxt/easings.D2MfVjcL.css",
+      "https://www.9to5studio.it/_nuxt/MagicAccordionContent.1KpD7nyE.css",
+      "https://www.9to5studio.it/_nuxt/default.B_YlEgFt.css",
+      "https://www.9to5studio.it/_nuxt/LinkHover.dT-ljlm8.css",
+      "https://www.9to5studio.it/_nuxt/MagicAccordionTrigger.9bAkWVdL.css",
+      "https://www.9to5studio.it/_nuxt/HorizontalScroll.D73JVQ4G.css",
+      "https://www.9to5studio.it/_nuxt/entry.BaVB82PM.css",
+      "https://www.9to5studio.it/_nuxt/fade-in.DZwlvotY.css"
+    ]
+  },
+  "step2": {
+    "topBgs": [
+      [
+        "oklab(0.999994 0.0000455678 0.0000200868)",
+        10
+      ],
+      [
+        "oklab(0.968003 -0.0712441 0.198396)",
+        4
+      ],
+      [
+        "oklab(0 0 0)",
+        3
+      ],
+      [
+        "oklab(0 0 0 / 0.4)",
+        1
+      ]
+    ],
+    "topColors": [
+      [
+        "#000000",
+        267
+      ],
+      [
+        "oklab(0.999994 0.0000455678 0.0000200868)",
+        15
+      ]
+    ],
+    "docBg": "transparent",
+    "bodyBg": "transparent",
+    "bodyColor": "#000000",
+    "filters": []
+  },
+  "step3_1440": {
+    "h1": [],
+    "h2": [],
+    "h3": [],
+    "h4": [],
+    "body": [
+      {
+        "textSnippet": "Se dovessimo definirci banalmente diremmo che siam",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "400",
+        "lineHeight": "39px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "architettura e progettazione specializzato in BIM.",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "400",
+        "lineHeight": "39px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "meglio, per cui: siamo giovani, polemici, creativi",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "400",
+        "lineHeight": "39px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "risoluti e per lo pi\u00f9 ambiziosi. E insieme facciam",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "400",
+        "lineHeight": "39px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "Insieme siamo 9to5.",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "400",
+        "lineHeight": "39px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "Se dovessimo definirci banalmente diremmo",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "che siamo uno studio di architettura e",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "progettazione specializzato in BIM. Ma",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "vogliamo fare di meglio, per cui: siamo giovani,",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "polemici, creativi, testardi, a giorni alterni",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      },
+      {
+        "textSnippet": "risoluti e per lo pi\u00f9 ambiziosi. E insieme",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P",
+        "className": ""
+      }
+    ],
+    "captions": [
+      {
+        "textSnippet": "Nine To Five Studio | Nine To Five Studio",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "SPAN",
+        "className": "nuxt-route-announcer"
+      },
+      {
+        "textSnippet": "Nine To Five Studio | Nine To Five Studio",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "SPAN",
+        "className": ""
+      },
+      {
+        "textSnippet": "NINE",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "700",
+        "lineHeight": "36px",
+        "letterSpacing": "normal",
+        "textTransform": "uppercase",
+        "tagName": "SPAN",
+        "className": ""
+      },
+      {
+        "textSnippet": "TO",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "700",
+        "lineHeight": "36px",
+        "letterSpacing": "normal",
+        "textTransform": "uppercase",
+        "tagName": "SPAN",
+        "className": ""
+      },
+      {
+        "textSnippet": "Menu",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "BUTTON",
+        "className": "text-small c-white px-4 relative z-1"
+      },
+      {
+        "textSnippet": "Contacts",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "BUTTON",
+        "className": "text-small c-white px-4 relative z-1"
+      },
+      {
+        "textSnippet": "Menu",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "BUTTON",
+        "className": "modalButton c-white py-8 flex flex-col w-15 cursor-pointer pointer-events-auto items-center relative z-2 lt-lg:hidden"
+      },
+      {
+        "textSnippet": "Menu",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "SPAN",
+        "className": "text-small rotate-180 [writing-mode:vertical-lr]"
+      },
+      {
+        "textSnippet": "Contacts",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "400",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "BUTTON",
+        "className": "modalButton c-white py-8 flex flex-col w-15 cursor-pointer pointer-events-auto items-center relative z-2 lt-lg:hidden lg:ml-auto"
+      },
+      {
+        "textSnippet": "Contacts",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 12,
+        "fontSizeRaw": "12px",
+        "fontWeight": "500",
+        "lineHeight": "18px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "SPAN",
+        "className": "text-small rotate-180 [writing-mode:vertical-lr]"
+      },
+      {
+        "textSnippet": "NINE",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 36,
+        "fontSizeRaw": "36px",
+        "fontWeight": "700",
+        "lineHeight": "36px",
+        "letterSpacing": "normal",
+        "textTransform": "uppercase",
+        "tagName": "SPAN",
+        "className": ""
+      }
+    ],
+    "heroLineBreaks": null
+  },
+  "step4_1440": {
+    "viewportWidth": 1440,
+    "bodyPaddingLeft": "0px",
+    "bodyPaddingRight": "0px",
+    "mainPaddingLeft": "0px",
+    "mainPaddingRight": "0px",
+    "sections": [
+      {
+        "index": 0,
+        "class": "",
+        "width": 1425,
+        "height": 7272,
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "paddingTop": "0px",
+        "paddingBottom": "0px",
+        "marginTop": "0px",
+        "marginBottom": "0px"
+      },
+      {
+        "index": 1,
+        "class": "introHome bottom-0 left-0 right-0 top-0 fixed z-9",
+        "width": 1425,
+        "height": 900,
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "paddingTop": "0px",
+        "paddingBottom": "0px",
+        "marginTop": "0px",
+        "marginBottom": "0px"
+      },
+      {
+        "index": 2,
+        "class": "hero py-15 bg-white flex-none relative z-1 lg:py-0 lg:pl-40 lg:pr-10",
+        "width": 388.0157470703125,
+        "height": 900,
+        "paddingLeft": "120px",
+        "paddingRight": "30px",
+        "paddingTop": "0px",
+        "paddingBottom": "0px",
+        "marginTop": "0px",
+        "marginBottom": "0px"
+      },
+      {
+        "index": 3,
+        "class": "workItems flex flex-col relative lg:flex-row",
+        "width": 5984,
+        "height": 900,
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "paddingTop": "0px",
+        "paddingBottom": "0px",
+        "marginTop": "0px",
+        "marginBottom": "0px"
+      }
+    ],
+    "containers": [
+      {
+        "class": "contents overflow-hidden",
+        "width": 0,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "contents",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "container-v py-5 h-full relative",
+        "width": 1425,
+        "maxWidth": "none",
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "display": "block",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "grid-v h-full items-center",
+        "width": 1395,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "grid",
+        "gridTemplateColumns": "43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px 43.75px",
+        "gap": "normal 15px"
+      },
+      {
+        "class": "contents lg:flex lg:gap-38",
+        "width": 250.015625,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "114px"
+      },
+      {
+        "class": "grid col-span-4 col-start-2 lg:col-span-5 lg:col-start-10 lg:items-center",
+        "width": 278.75,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "grid",
+        "gridTemplateColumns": "278.75px",
+        "gap": "normal"
+      },
+      {
+        "class": "introText container-h flex flex-col gap-15 w-full lg:gap-0 lg:max-w-xs lg:justify-between",
+        "width": 238.015625,
+        "maxWidth": "240px",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "0px"
+      },
+      {
+        "class": "stickyBookmarks container-h will-change-transform left-0 top-0 absolute z-2",
+        "width": 60,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "block",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "card container-h flex flex-col-reverse lg:flex-none lg:flex-row lg:w-fit",
+        "width": 1037,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "card container-h flex flex-col-reverse lg:flex-none lg:flex-row lg:w-fit",
+        "width": 642,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "card container-h flex flex-col-reverse lg:flex-none lg:flex-row lg:w-fit",
+        "width": 876,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "card container-h flex flex-col-reverse lg:flex-none lg:flex-row lg:w-fit",
+        "width": 929.999755859375,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "card container-h flex flex-col-reverse lg:flex-none lg:flex-row lg:w-fit",
+        "width": 930,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "card container-h flex flex-col-reverse lg:flex-none lg:flex-row lg:w-fit",
+        "width": 549,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "card container-h flex flex-col-reverse lg:flex-none lg:flex-row lg:w-fit",
+        "width": 930,
+        "maxWidth": "none",
+        "paddingLeft": "0px",
+        "paddingRight": "0px",
+        "display": "flex",
+        "gridTemplateColumns": "none",
+        "gap": "normal"
+      },
+      {
+        "class": "siteMenu container-h container-v grid pointer-events-none bottom-0 left-0 top-0 fixed z-1",
+        "width": 1425,
+        "maxWidth": "none",
+        "paddingLeft": "15px",
+        "paddingRight": "15px",
+        "display": "grid",
+        "gridTemplateColumns": "1395px",
+        "gap": "normal"
+      }
+    ]
+  },
+  "step5_detail": {
+    "heroSplits": [
+      {
+        "tag": "DIV",
+        "class": "inline-flex items-center left-0 top-0 justify-center absolute",
+        "text": "",
+        "style": "display: none; translate: none; rotate: none; scale: none; transform: translate(-3px, -4px);"
+      },
+      {
+        "tag": "DIV",
+        "class": "inline-flex relative overflow-clip justify-start",
+        "text": "Menu",
+        "style": null
+      },
+      {
+        "tag": "DIV",
+        "class": "inline-flex relative overflow-clip justify-start",
+        "text": "Contacts",
+        "style": null
+      },
+      {
+        "tag": "DIV",
+        "class": "gsap:word",
+        "text": "NINE",
+        "style": "position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate3d(0px, 2.3266px, 0px); will-change: transform;"
+      },
+      {
+        "tag": "DIV",
+        "class": "gsap:word",
+        "text": "TO",
+        "style": "position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate3d(0px, 4.1503px, 0px); will-change: transform;"
+      },
+      {
+        "tag": "DIV",
+        "class": "gsap:word",
+        "text": "FIVE",
+        "style": "position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate3d(0px, 6.3842px, 0px); will-change: transform;"
+      },
+      {
+        "tag": "DIV",
+        "class": "gsap:word",
+        "text": "STUDIO",
+        "style": "position: relative; display: inline-block; translate: none; rotate: none; scale: none; transform: translate3d(0px, 9.348px, 0px); will-change: transform;"
+      }
+    ],
+    "pDuplicates": [],
+    "scrollCueInfo": null,
+    "projectItemsData": [
+      {
+        "text": "01  Pegaso Quattro",
+        "href": "/work/pegaso-quattro",
+        "hasImage": true,
+        "childTags": [
+          "DIV.bookmark bg-white flex flex-none h-15 items-center justify-between lg:flex-col lg:h-full lg:w-20",
+          "DIV.flex overflow-hidden"
+        ]
+      },
+      {
+        "text": "02  Eco",
+        "href": "/work/eco",
+        "hasImage": true,
+        "childTags": [
+          "DIV.bookmark bg-white flex flex-none h-15 items-center justify-between lg:flex-col lg:h-full lg:w-20",
+          "DIV.flex overflow-hidden"
+        ]
+      },
+      {
+        "text": "03  -H",
+        "href": "/work/h",
+        "hasImage": true,
+        "childTags": [
+          "DIV.bookmark bg-white flex flex-none h-15 items-center justify-between lg:flex-col lg:h-full lg:w-20",
+          "DIV.flex overflow-hidden"
+        ]
+      },
+      {
+        "text": "03  Borders",
+        "href": "/work/Borders",
+        "hasImage": true,
+        "childTags": [
+          "DIV.bookmark bg-white flex flex-none h-15 items-center justify-between lg:flex-col lg:h-full lg:w-20",
+          "DIV.flex overflow-hidden"
+        ]
+      },
+      {
+        "text": "05  Project Z",
+        "href": "/work/project-z",
+        "hasImage": true,
+        "childTags": [
+          "DIV.bookmark bg-white flex flex-none h-15 items-center justify-between lg:flex-col lg:h-full lg:w-20",
+          "DIV.flex overflow-hidden"
+        ]
+      },
+      {
+        "text": "06  Approdo",
+        "href": "/work/approdo",
+        "hasImage": true,
+        "childTags": [
+          "DIV.bookmark bg-white flex flex-none h-15 items-center justify-between lg:flex-col lg:h-full lg:w-20",
+          "DIV.flex overflow-hidden"
+        ]
+      },
+      {
+        "text": "07  Boulder",
+        "href": "/work/boulder",
+        "hasImage": true,
+        "childTags": [
+          "DIV.bookmark bg-white flex flex-none h-15 items-center justify-between lg:flex-col lg:h-full lg:w-20",
+          "DIV.flex overflow-hidden"
+        ]
+      }
+    ],
+    "menuTriggersData": [
+      {
+        "text": "Menu",
+        "class": "text-small c-white px-4 relative z-1",
+        "tag": "BUTTON"
+      },
+      {
+        "text": "Contacts",
+        "class": "text-small c-white px-4 relative z-1",
+        "tag": "BUTTON"
+      },
+      {
+        "text": "Menu",
+        "class": "siteMenu container-h container-v grid pointer-events-none bottom-0 left-0 top-0 fixed z-1",
+        "tag": "ASIDE"
+      },
+      {
+        "text": "Menu",
+        "class": "modalButton c-white py-8 flex flex-col w-15 cursor-pointer pointer-events-auto items-center relative z-2 lt-lg:hidden",
+        "tag": "BUTTON"
+      },
+      {
+        "text": "Contacts",
+        "class": "modalButton c-white py-8 flex flex-col w-15 cursor-pointer pointer-events-auto items-center relative z-2 lt-lg:hidden lg:ml-auto",
+        "tag": "BUTTON"
+      }
+    ]
+  },
+  "step6_scrub": [
+    {
+      "percent": 0,
+      "scrollY": 0,
+      "elements": [
+        {
+          "className": "introHome bottom-0 left-0 right-0 top-0 ",
+          "tagName": "SECTION",
+          "transform": "none",
+          "opacity": "1",
+          "clipPath": "inset(0% 5% 0% 0%)"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 39)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 39)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 39)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 39)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 39)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 9)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "horizontalScroll lg:overflow-hidden",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 460.8, 0)",
+          "opacity": "1",
+          "clipPath": "polygon(15px 0px, 100% 0px, 100% 100%, 15px 100%)"
+        }
+      ]
+    },
+    {
+      "percent": 10,
+      "scrollY": 637,
+      "elements": [
+        {
+          "className": "introHome bottom-0 left-0 right-0 top-0 ",
+          "tagName": "SECTION",
+          "transform": "none",
+          "opacity": "1",
+          "clipPath": "inset(0% 5% 0% 0%)"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 8.00541)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 11.833)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 16.9981)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 23.7744)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 32.4095)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 9)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "horizontalScroll lg:overflow-hidden",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 460.8, 0)",
+          "opacity": "1",
+          "clipPath": "polygon(15px 0px, 100% 0px, 100% 100%, 15px 100%)"
+        }
+      ]
+    },
+    {
+      "percent": 25,
+      "scrollY": 1593,
+      "elements": [
+        {
+          "className": "introHome bottom-0 left-0 right-0 top-0 ",
+          "tagName": "SECTION",
+          "transform": "none",
+          "opacity": "1",
+          "clipPath": "inset(0% 5% 0% 0%)"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.32994)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.696969)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.3212)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 2.30428)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 3.78394)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 1.36934)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "horizontalScroll lg:overflow-hidden",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 460.8, 0)",
+          "opacity": "1",
+          "clipPath": "polygon(15px 0px, 100% 0px, 100% 100%, 15px 100%)"
+        }
+      ]
+    },
+    {
+      "percent": 50,
+      "scrollY": 3186,
+      "elements": [
+        {
+          "className": "introHome bottom-0 left-0 right-0 top-0 ",
+          "tagName": "SECTION",
+          "transform": "none",
+          "opacity": "1",
+          "clipPath": "inset(0% 5% 0% 0%)"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.007137)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.046293)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0.030627)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "horizontalScroll lg:overflow-hidden",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 460.8, 0)",
+          "opacity": "1",
+          "clipPath": "polygon(15px 0px, 100% 0px, 100% 100%, 15px 100%)"
+        }
+      ]
+    },
+    {
+      "percent": 75,
+      "scrollY": 4779,
+      "elements": [
+        {
+          "className": "introHome bottom-0 left-0 right-0 top-0 ",
+          "tagName": "SECTION",
+          "transform": "none",
+          "opacity": "1",
+          "clipPath": "inset(0% 5% 0% 0%)"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "horizontalScroll lg:overflow-hidden",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 460.8, 0)",
+          "opacity": "1",
+          "clipPath": "polygon(15px 0px, 100% 0px, 100% 100%, 15px 100%)"
+        }
+      ]
+    },
+    {
+      "percent": 90,
+      "scrollY": 5734,
+      "elements": [
+        {
+          "className": "introHome bottom-0 left-0 right-0 top-0 ",
+          "tagName": "SECTION",
+          "transform": "none",
+          "opacity": "1",
+          "clipPath": "inset(0% 5% 0% 0%)"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "horizontalScroll lg:overflow-hidden",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 460.8, 0)",
+          "opacity": "1",
+          "clipPath": "polygon(15px 0px, 100% 0px, 100% 100%, 15px 100%)"
+        }
+      ]
+    },
+    {
+      "percent": 100,
+      "scrollY": 6372,
+      "elements": [
+        {
+          "className": "introHome bottom-0 left-0 right-0 top-0 ",
+          "tagName": "SECTION",
+          "transform": "none",
+          "opacity": "1",
+          "clipPath": "inset(0% 5% 0% 0%)"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)",
+          "opacity": "1",
+          "clipPath": "none"
+        },
+        {
+          "className": "horizontalScroll lg:overflow-hidden",
+          "tagName": "DIV",
+          "transform": "matrix(1, 0, 0, 1, 460.8, 0)",
+          "opacity": "1",
+          "clipPath": "polygon(15px 0px, 100% 0px, 100% 100%, 15px 100%)"
+        }
+      ]
+    }
+  ],
+  "project_page_data": {
+    "h1": "Pegaso Quattro",
+    "nextProjText": "Next project  ECO IN FASE DI SVILUPPO COMMERCIALE",
+    "nextProjClass": "cardNext container-h group flex-none relative lg:pl-15 lg:pr-40 lt-lg:pb-30 lt-lg:pt-15 lg:w-50vw",
+    "nextProjHref": "/work/eco"
+  },
+  "step3_4_768": {
+    "h1": null,
+    "h2": null,
+    "body": {
+      "fontSize": "27.216px",
+      "lineHeight": "29.484px",
+      "paddingLeft": "0px",
+      "paddingRight": "0px"
+    },
+    "mainPadding": "0px"
+  },
+  "step3_390": {
+    "h1": [],
+    "h2": [],
+    "h3": [],
+    "h4": [],
+    "body": [
+      {
+        "textSnippet": "Se dovessimo definirci banalmente",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P"
+      },
+      {
+        "textSnippet": "diremmo che siamo uno studio di",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P"
+      },
+      {
+        "textSnippet": "architettura e progettazione",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P"
+      },
+      {
+        "textSnippet": "specializzato in BIM. Ma vogliamo fare di",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P"
+      },
+      {
+        "textSnippet": "meglio, per cui: siamo giovani, polemici,",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P"
+      },
+      {
+        "textSnippet": "creativi, testardi, a giorni alterni risoluti e",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "P"
+      }
+    ],
+    "captions": [
+      {
+        "textSnippet": "Nine To Five Studio | Nine To Five Studio",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 16,
+        "fontSizeRaw": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "SPAN"
+      },
+      {
+        "textSnippet": "Nine To Five Studio | Nine To Five Studio",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 16,
+        "fontSizeRaw": "16px",
+        "fontWeight": "400",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "SPAN"
+      },
+      {
+        "textSnippet": "NINE",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "700",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "textTransform": "uppercase",
+        "tagName": "SPAN"
+      },
+      {
+        "textSnippet": "TO",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 20,
+        "fontSizeRaw": "20px",
+        "fontWeight": "700",
+        "lineHeight": "20px",
+        "letterSpacing": "normal",
+        "textTransform": "uppercase",
+        "tagName": "SPAN"
+      },
+      {
+        "textSnippet": "Menu",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 16,
+        "fontSizeRaw": "16px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "BUTTON"
+      },
+      {
+        "textSnippet": "Contacts",
+        "fontFamily": "PPNeueMontreal, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji\"",
+        "fontSizePx": 16,
+        "fontSizeRaw": "16px",
+        "fontWeight": "500",
+        "lineHeight": "24px",
+        "letterSpacing": "normal",
+        "textTransform": "none",
+        "tagName": "BUTTON"
+      }
+    ],
+    "mainPaddingLeft": "0px",
+    "mainPaddingRight": "0px",
+    "bodyPaddingLeft": "0px",
+    "bodyPaddingRight": "0px"
+  },
+  "step7_touch": {
+    "lenisTouchActive": false,
+    "lenisTouchMultiplier": null,
+    "bodyOverflowY": "visible",
+    "htmlScrollBehavior": "auto"
+  }
+}

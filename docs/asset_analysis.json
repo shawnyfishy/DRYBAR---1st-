@@ -1,0 +1,227 @@
+{
+  "mediaQueries": [
+    "(any-hover:hover)and (any-pointer:fine)",
+    "(hover:hover)and (pointer:fine)",
+    "(max-width:1023.9px)",
+    "(max-width:64rem)",
+    "(max-width:767.9px)",
+    "(min-width:1024px)",
+    "(min-width:1280px)",
+    "(min-width:1680px)",
+    "(min-width:1920px)",
+    "(min-width:2560px)",
+    "(min-width:640px)",
+    "(min-width:64rem)",
+    "(min-width:768px)",
+    "(pointer:fine)and (hover:hover)"
+  ],
+  "fontFaces": [
+    "@font-face{font-family:PPNeueMontreal;src:local(\"PPNeueMontreal Bold\"),url(../PPNeueMontreal-Bold.woff2) format(woff2),url(../PPNeueMontreal-Bold.woff) format(woff);font-display:swap;font-weight:700;font-style:normal}",
+    "@font-face{font-family:PPNeueMontreal;src:local(\"PPNeueMontreal Medium\"),url(../PPNeueMontreal-Medium.ttf) format(truetype),url(../PPNeueMontreal-Medium.otf) format(opentype);font-display:swap;font-weight:500;font-style:normal}",
+    "@font-face{font-family:PPNeueMontreal;src:local(\"PPNeueMontreal Regular\"),local(\"PPNeueMontreal\"),url(../PPNeueMontreal-Regular.woff2) format(woff2),url(../PPNeueMontreal-Regular.woff) format(woff);font-display:swap;font-weight:400;font-style:normal}"
+  ],
+  "keyframes": [],
+  "fontFamilies": [
+    "var(--font-sans)",
+    "PPNeueMontreal",
+    "var( --default-font-family,ui-sans-serif,system-ui,sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\" )",
+    "var(--font-serif)!important",
+    "var( --default-monoFont-family,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,\"Liberation Mono\",\"Courier New\",monospace )",
+    "var(--font-sans)!important"
+  ],
+  "fontSizes": [
+    ".75rem",
+    "1.25rem",
+    "1.75rem",
+    "100%",
+    "110px",
+    "120%",
+    "12px",
+    "1em",
+    "1rem",
+    "24px!important",
+    "2rem",
+    "3.125rem",
+    "3.5rem",
+    "3rem",
+    "5.5rem",
+    "56.7%",
+    "7.5rem",
+    "75%",
+    "80%",
+    "80px",
+    "90%",
+    "inherit",
+    "var(--text-2xl-fontSize)",
+    "var(--text-3xl-fontSize)",
+    "var(--text-sm-fontSize)"
+  ],
+  "lineHeights": [
+    "calc(var(--spacing)*8.5)",
+    "var(--un-leading,var(--text-2xl-lineHeight))",
+    "var(--un-leading,var(--text-sm-lineHeight))",
+    "120%",
+    "1.1",
+    "108%",
+    "calc(var(--spacing)*6)",
+    "var(--leading-none)",
+    "var(--un-leading,var(--text-3xl-lineHeight))",
+    "1.5",
+    "calc(var(--spacing)*6.5)",
+    "calc(var(--spacing)*13)",
+    "1",
+    "var(--leading-snug)",
+    "0",
+    "var(--leading-relaxed)"
+  ],
+  "letterSpacings": [
+    "var(--tracking-wide)",
+    "inherit"
+  ],
+  "jsAnalysis": {
+    "/_nuxt/YJATDatz.js": {
+      "length": 1333,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/BuDleb2b.js": {
+      "length": 12584,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": true,
+      "hasCustomEase": false,
+      "hasObserver": true,
+      "hasFlip": false
+    },
+    "/_nuxt/Duh89kIH.js": {
+      "length": 1144,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/CPBF00s8.js": {
+      "length": 1377,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/Ct5eJM-i.js": {
+      "length": 13575,
+      "hasGsap": true,
+      "hasLenis": false,
+      "hasSplitText": true,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/Dn9LV3QW.js": {
+      "length": 5130,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": true,
+      "hasFlip": false
+    },
+    "/_nuxt/C8xy95f-.js": {
+      "length": 44364,
+      "hasGsap": true,
+      "hasLenis": true,
+      "hasSplitText": true,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/Cl4vKIPn.js": {
+      "length": 30223,
+      "hasGsap": true,
+      "hasLenis": true,
+      "hasSplitText": true,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": true
+    },
+    "/_nuxt/DGvKOPmf.js": {
+      "length": 201,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "https://embeds.iubenda.com/widgets/c23011f9-1c15-45e5-aabf-20afefa3d1f8.js": {
+      "length": 51896,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": true,
+      "hasCustomEase": false,
+      "hasObserver": true,
+      "hasFlip": false
+    },
+    "https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496": {
+      "length": 31612,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": true,
+      "hasFlip": false
+    },
+    "/_nuxt/CRM2Rzh_.js": {
+      "length": 18694,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": true,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/ajvS-jm2.js": {
+      "length": 1116,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/builds/meta/058ec3a6-9318-48c4-9287-fa27b6c98866.json": {
+      "length": 187,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/BcbzvQO3.js": {
+      "length": 454,
+      "hasGsap": false,
+      "hasLenis": false,
+      "hasSplitText": false,
+      "hasCustomEase": false,
+      "hasObserver": false,
+      "hasFlip": false
+    },
+    "/_nuxt/Bben5wXQ.js": {
+      "length": 305413,
+      "hasGsap": true,
+      "hasLenis": true,
+      "hasSplitText": true,
+      "hasCustomEase": true,
+      "hasObserver": true,
+      "hasFlip": true
+    }
+  }
+}

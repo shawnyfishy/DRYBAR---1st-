@@ -1,0 +1,89 @@
+{
+  "brand": {
+    "name": "Drybar Qatar",
+    "tagline": "Blowouts Only • No Cuts, No Colour",
+    "location": "Gewan Island, The Pearl, Doha",
+    "whatsapp": "+974 7773 0600",
+    "instagram": "@thedrybar.qatar",
+    "legal": "Drybar Qatar is operated in the State of Qatar under licence by Lukhraib Rose LLC."
+  },
+  "nav": {
+    "home": "Home",
+    "prices": "Price List",
+    "gifts": "Gifts & Memberships",
+    "book": "Book a Chair",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "hero": {
+    "line1": "No Cuts.",
+    "line2": "No Colour.",
+    "line3": "Just Blowouts.",
+    "paragraph": "We do one thing and we are obsessed with doing it best. Welcome to an hour that is yours at Gewan Island.",
+    "scrollCue": "Scroll to discover"
+  },
+  "airWipe": {
+    "statement": "An hour that is yours."
+  },
+  "theOneThing": {
+    "title": "We Do One Thing",
+    "paragraph1": "Drybar Qatar is a blow-dry bar focused entirely on blowouts and hair styling. We never cut hair, and we never colour hair.",
+    "paragraph2": "Pricing follows your hair length and the style chosen, so you always know what to expect before you step into a chair."
+  },
+  "ctaIndex": {
+    "bookNow": "Book a Chair",
+    "priceList": "Price List",
+    "giftsMemberships": "Gifts & Memberships",
+    "managePrompt": "Already booked? Reschedule or cancel your visit →",
+    "fallbackNotice": "* Direct online booking opening shortly. Message us on WhatsApp to book a chair."
+  },
+  "stylesStrip": {
+    "title": "Our Signature Styles",
+    "subtitle": "Pick your favorite blowout look",
+    "fromLabel": "From"
+  },
+  "pricesPage": {
+    "title": "Price List",
+    "subtitle": "Blowouts from QAR 250 • Pricing follows hair length and style chosen",
+    "stylingCategory": "Hair Styling",
+    "addonsCategory": "Add-Ons",
+    "membershipsCategory": "Memberships",
+    "extensionNote": "Extensions add 15 minutes to each styling service.",
+    "retailNotice": "Drybar styling products and professional tools are available for purchase in shop.",
+    "homeServicesTitle": "Home Services",
+    "homeServicesNotice": "TODO_HOME_SERVICES: Details available upon request.",
+    "tableHeader": {
+      "style": "Style",
+      "short": "Short",
+      "medium": "Medium",
+      "long": "Long",
+      "extraLong": "Extra Long"
+    }
+  },
+  "giftsPage": {
+    "title": "Gifts & Memberships",
+    "subtitle": "Blowout packages & session series",
+    "sessionsLabel": "Sessions",
+    "termsTitle": "Membership Terms",
+    "termsNotice": "TODO_TERMS: Official commercial membership terms match written agreement at enrollment.",
+    "digitalGiftCardsTitle": "Digital Gift Cards",
+    "digitalGiftCardsNotice": "Treat someone to an hour that is theirs. Digital gift card inquiries and purchases are handled directly.",
+    "offer3": "20% OFF your 3rd session",
+    "offer6": "50% OFF your 6th session",
+    "offer8": "50% OFF your 8th session + Complimentary Hair Treatment"
+  },
+  "footer": {
+    "locationLabel": "Flagship Location",
+    "address": "Gewan Island, The Pearl, Doha, Qatar",
+    "mapsLabel": "View on Google Maps",
+    "hoursLabel": "Opening Hours",
+    "hours": "Every day, 9:00am – 9:00pm",
+    "ramadanNote": "Hours shift during the holy month of Ramadan.",
+    "contactLabel": "Contact & Booking",
+    "whatsappLabel": "Message on WhatsApp",
+    "phoneLabel": "Call Us",
+    "instagramLabel": "Follow @thedrybar.qatar",
+    "policyTitle": "Booking & Cancellation Policy",
+    "policyText": "TODO_POLICY_TEXT: Official booking, late arrival, and cancellation terms match current Zenoti instance configuration."
+  }
+}

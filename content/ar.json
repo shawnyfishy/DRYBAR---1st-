@@ -1,0 +1,89 @@
+{
+  "brand": {
+    "name": "Drybar Qatar",
+    "tagline": "TODO_AR",
+    "location": "Gewan Island, The Pearl, Doha",
+    "whatsapp": "+974 7773 0600",
+    "instagram": "@thedrybar.qatar",
+    "legal": "Drybar Qatar is operated in the State of Qatar under licence by Lukhraib Rose LLC."
+  },
+  "nav": {
+    "home": "TODO_AR",
+    "prices": "TODO_AR",
+    "gifts": "TODO_AR",
+    "book": "TODO_AR",
+    "menu": "TODO_AR",
+    "close": "TODO_AR"
+  },
+  "hero": {
+    "line1": "TODO_AR",
+    "line2": "TODO_AR",
+    "line3": "TODO_AR",
+    "paragraph": "TODO_AR",
+    "scrollCue": "TODO_AR"
+  },
+  "airWipe": {
+    "statement": "TODO_AR"
+  },
+  "theOneThing": {
+    "title": "TODO_AR",
+    "paragraph1": "TODO_AR",
+    "paragraph2": "TODO_AR"
+  },
+  "ctaIndex": {
+    "bookNow": "TODO_AR",
+    "priceList": "TODO_AR",
+    "giftsMemberships": "TODO_AR",
+    "managePrompt": "TODO_AR",
+    "fallbackNotice": "TODO_AR"
+  },
+  "stylesStrip": {
+    "title": "TODO_AR",
+    "subtitle": "TODO_AR",
+    "fromLabel": "TODO_AR"
+  },
+  "pricesPage": {
+    "title": "TODO_AR",
+    "subtitle": "TODO_AR",
+    "stylingCategory": "TODO_AR",
+    "addonsCategory": "TODO_AR",
+    "membershipsCategory": "TODO_AR",
+    "extensionNote": "TODO_AR",
+    "retailNotice": "TODO_AR",
+    "homeServicesTitle": "TODO_AR",
+    "homeServicesNotice": "TODO_AR",
+    "tableHeader": {
+      "style": "TODO_AR",
+      "short": "TODO_AR",
+      "medium": "TODO_AR",
+      "long": "TODO_AR",
+      "extraLong": "TODO_AR"
+    }
+  },
+  "giftsPage": {
+    "title": "TODO_AR",
+    "subtitle": "TODO_AR",
+    "sessionsLabel": "TODO_AR",
+    "termsTitle": "TODO_AR",
+    "termsNotice": "TODO_AR",
+    "digitalGiftCardsTitle": "TODO_AR",
+    "digitalGiftCardsNotice": "TODO_AR",
+    "offer3": "TODO_AR",
+    "offer6": "TODO_AR",
+    "offer8": "TODO_AR"
+  },
+  "footer": {
+    "locationLabel": "TODO_AR",
+    "address": "Gewan Island, The Pearl, Doha, Qatar",
+    "mapsLabel": "TODO_AR",
+    "hoursLabel": "TODO_AR",
+    "hours": "TODO_AR",
+    "ramadanNote": "TODO_AR",
+    "contactLabel": "TODO_AR",
+    "whatsappLabel": "TODO_AR",
+    "phoneLabel": "TODO_AR",
+    "instagramLabel": "Follow @thedrybar.qatar",
+    "policyTitle": "TODO_AR",
+    "policyText": "TODO_POLICY_TEXT: Official booking, late arrival, and cancellation terms match current Zenoti instance configuration."
+  }
+}
