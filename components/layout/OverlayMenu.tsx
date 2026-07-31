@@ -9,7 +9,8 @@ import { Logo } from '@/components/ui/Logo';
 import { useMenu } from './MenuProvider';
 
 export function OverlayMenu() {
-  const { isOpen, close } = useMenu();
+  const { activeDrawer, close } = useMenu();
+  const isOpen = activeDrawer === 'menu';
   const overlayRef = useRef<HTMLDivElement>(null);
   const drawerRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
@@ -33,17 +34,8 @@ export function OverlayMenu() {
       closeButtonRef.current?.focus();
       gsap.set(overlay, { autoAlpha: 1 });
 
-      // Push transition: the drawer enters while the page content is
-      // shoved aside in the same beat — both tweens share one timeline so
-      // they read as a single motion, not an overlay fading over static content.
       const tl = gsap.timeline({ defaults: { duration: DUR.page, ease: EASE.soft } });
-
       tl.fromTo(drawer, { xPercent: -100 }, { xPercent: 0 }, 0);
-
-      if (pageContent) {
-        tl.fromTo(pageContent, { x: 0 }, { x: '10vw' }, 0);
-      }
-
       tl.fromTo(links, { y: 25, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, delay: 0.2 }, 0)
         .fromTo(sections, { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.3 }, 0);
     } else {
@@ -54,15 +46,6 @@ export function OverlayMenu() {
         onComplete: () => gsap.set(overlay, { autoAlpha: 0 }),
       });
       tl.to(drawer, { xPercent: -100 }, 0);
-      if (pageContent) {
-        // clearProps strips the inline transform once settled at rest — a
-        // lingering `transform: translate(0,0)` (even a no-op one) turns
-        // #page-content into a new containing block for any `position:fixed`
-        // descendant, which silently breaks HorizontalTrack's ScrollTrigger
-        // pin (it stops tracking the real viewport and scrolls away with
-        // #page-content instead).
-        tl.to(pageContent, { x: 0, clearProps: 'transform' }, 0);
-      }
     }
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -102,7 +85,7 @@ export function OverlayMenu() {
       aria-modal="true"
       aria-label="Navigation Menu"
       aria-hidden={!isOpen}
-      className="invisible fixed inset-0 z-50 flex"
+      className="invisible fixed inset-0 z-50 flex bg-black/40"
     >
       {/* LEFT DRAWER PANEL — pushes #page-content aside as it slides in.
           Off-canvas position is set by the GSAP close timeline (which also
@@ -113,7 +96,7 @@ export function OverlayMenu() {
           drawer permanently stuck off-screen even mid-"open" tween. */}
       <div
         ref={drawerRef}
-        className="flex h-full w-full max-w-md flex-col justify-between [background-image:var(--backgroundImage-grad-sumi)] p-8 text-[var(--color-cream)] shadow-2xl md:p-12 border-r border-[var(--color-warmgrey)]/20"
+        className="flex h-full w-full max-w-sm flex-col justify-between [background-image:var(--backgroundImage-grad-sumi)] p-8 text-[var(--color-cream)] shadow-2xl md:p-10 border-r border-[var(--color-warmgrey)]/20"
       >
         {/* TOP LOGO & CLOSE BUTTON */}
         <div className="flex items-center justify-between border-b border-[var(--color-warmgrey)]/20 pb-6">
@@ -133,7 +116,7 @@ export function OverlayMenu() {
             <span className="text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-warmgrey)]">
               Navigation
             </span>
-            <nav className="flex flex-col gap-4 font-normal text-[clamp(1.5rem,4vw,2.5rem)] leading-none tracking-[-0.02em]">
+            <nav className="flex flex-col gap-3 font-normal text-[clamp(1.75rem,3vw,2.25rem)] leading-none tracking-[-0.02em]">
               <a
                 href="/"
                 className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"

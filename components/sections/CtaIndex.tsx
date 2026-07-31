@@ -20,6 +20,7 @@ export function CtaIndex() {
       label: bookCta.isFallback ? t('fallbackNotice') : t('bookNow'),
       href: bookCta.href,
       target: bookCta.target,
+      imageSrc: '/images/3.webp',
       placeholderLabel: 'signature blowout finish, mirror perspective',
       onClick: () => trackCtaClick('book', bookCta.href),
     },
@@ -28,6 +29,7 @@ export function CtaIndex() {
       label: t('priceList'),
       href: '/prices',
       target: '_self' as const,
+      imageSrc: '/images/4.webp',
       placeholderLabel: 'style menu cards, product lineup',
       onClick: () => trackCtaClick('prices', '/prices'),
     },
@@ -36,6 +38,7 @@ export function CtaIndex() {
       label: t('giftsMemberships'),
       href: '/gifts',
       target: '_self' as const,
+      imageSrc: '/images/5.webp',
       placeholderLabel: 'gift card packaging, yellow ribbon',
       onClick: () => trackCtaClick('gifts', '/gifts'),
     },
@@ -49,7 +52,7 @@ export function CtaIndex() {
   };
 
   return (
-    <section className="flex min-h-[844px] w-[100vw] flex-shrink-0 flex-col justify-center bg-[var(--color-cream)] py-12 px-6 md:px-12 border-t border-b border-[var(--color-warmgrey)]/20 overflow-hidden">
+    <section className="flex min-h-[844px] w-[100vw] flex-shrink-0 flex-col justify-center bg-[var(--color-cream)] py-12 px-16 md:px-20 border-t border-b border-[var(--color-warmgrey)]/20 overflow-hidden">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between gap-6">
         {rows.map((row, idx) => {
           const isHovered = hoveredId === row.id;
@@ -75,7 +78,7 @@ export function CtaIndex() {
               >
                 {/* CURSOR-FOLLOWING HOVER CARD THUMBNAIL (MATCHING REFERENCE SITE 9to5studio PROJECT HOVER) */}
                 <div
-                  className={`pointer-events-none absolute z-20 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-2xl transition-all duration-300 ease-out hidden lg:block
+                  className={`pointer-events-none absolute z-20 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-2xl overflow-hidden transition-all duration-300 ease-out hidden lg:block
                     ${isHovered ? 'scale-100 opacity-90' : 'scale-95 opacity-0'}
                   `}
                   style={{
@@ -83,7 +86,7 @@ export function CtaIndex() {
                     top: `${cursorPos.y}px`,
                   }}
                 >
-                  <Placeholder ratio="4:5" label={row.placeholderLabel} className="h-full w-full object-cover border-2 border-[var(--color-charcoal)]" />
+                  <img src={row.imageSrc} alt={row.label} className="h-full w-full object-cover border-2 border-[var(--color-charcoal)] rounded-lg" />
                 </div>
 
                 {/* ROW LABEL */}

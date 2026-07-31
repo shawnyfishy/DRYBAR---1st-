@@ -8,11 +8,42 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { DUR, EASE, STAGGER } from '@/lib/motion';
 import { useGsap } from '@/components/motion/useGsap';
 import { useContainerAnimation } from '@/components/motion/HorizontalScrollContext';
+import { PRELOADER_REVEAL_EVENT } from '@/lib/preloaderEvents';
+
+const HERO_IMAGES = [
+  '/images/1.webp',
+  '/images/2.webp',
+  '/images/3.webp',
+  '/images/4.webp',
+  '/images/5.webp',
+  '/images/6.webp',
+  '/images/7.webp',
+  '/images/8.webp',
+  '/images/9.webp',
+  '/images/10.webp',
+  '/images/11.webp',
+  '/images/12.webp',
+  '/images/13.webp',
+  '/images/14.webp',
+  '/images/15.webp',
+  '/images/16.webp',
+  '/images/17.webp',
+  '/images/18.webp',
+];
 
 export function Hero() {
   const t = useTranslations('hero');
   const heroRef = useRef<HTMLElement>(null);
   const containerAnimation = useContainerAnimation();
+  const [activeImgIndex, setActiveImgIndex] = React.useState(0);
+
+  React.useEffect(() => {
+    const timer = setInterval(() => {
+      setActiveImgIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 1200);
+
+    return () => clearInterval(timer);
+  }, []);
 
   useGsap((self) => {
     const q = self.selector!;
@@ -22,8 +53,7 @@ export function Hero() {
     const scrollCue = q('.scroll-cue-wrapper');
     const header = document.querySelector('header');
 
-    // Orchestrated Entrance Timeline
-    const tl = gsap.timeline({ defaults: { ease: EASE.out } });
+    const tl = gsap.timeline({ paused: true, defaults: { ease: EASE.out } });
 
     tl.fromTo(
       words,
@@ -58,10 +88,6 @@ export function Hero() {
       );
     }
 
-    // Scroll Cue Fade — hides once the horizontal track has genuinely
-    // started moving away from Hero. Without containerAnimation this would
-    // key off real (vertical) scroll position, firing after only ~50px of
-    // scroll regardless of how far the horizontal track has actually moved.
     ScrollTrigger.create(
       containerAnimation
         ? {
@@ -78,12 +104,18 @@ export function Hero() {
             onLeaveBack: () => gsap.to(scrollCue, { opacity: 1, duration: DUR.fast }),
           }
     );
+
+    if (document.querySelector('.preloader-container')) {
+      window.addEventListener(PRELOADER_REVEAL_EVENT, () => tl.play(), { once: true });
+    } else {
+      tl.play();
+    }
   }, heroRef, [containerAnimation]);
 
   return (
     <section 
       ref={heroRef} 
-      className="relative flex min-h-[100dvh] w-[100vw] flex-shrink-0 flex-col justify-between bg-[#FEDD30] p-6 pt-20 md:p-12 md:pt-24 overflow-hidden"
+      className="relative flex min-h-[100dvh] w-[100vw] flex-shrink-0 flex-col justify-between bg-[#FEDD30] px-16 pt-20 pb-8 md:px-20 md:pt-24 md:pb-12 overflow-hidden"
     >
       {/* TOP HEADER TRACKING WORDS MATCHING REFERENCE 9to5studio BANNERS */}
       <div className="flex w-full items-center justify-between text-[clamp(1.25rem,4vw,3.5rem)] font-bold tracking-[0.1em] uppercase text-[var(--color-charcoal)]">
@@ -93,13 +125,19 @@ export function Hero() {
         <span className="hero-top-word inline-block">BLOWOUTS</span>
       </div>
 
-      {/* CENTER FLOATING HERO IMAGE CARD MATCHING REFERENCE SITE CENTER THUMBNAIL */}
-      <div className="hero-center-card my-auto mx-auto w-full max-w-xs sm:max-w-sm lg:max-w-md">
-        <Placeholder 
-          ratio="1:1" 
-          label="chair-side, mid-blowout, brush in frame" 
-          className="shadow-2xl border-2 border-[var(--color-charcoal)]/10"
-        />
+      {/* CENTER FLOATING HERO IMAGE SLIDESHOW MATCHING REFERENCE 9to5studio PROJECT THUMBNAILS */}
+      <div className="hero-center-card group relative my-auto mx-auto aspect-square w-full max-w-xs sm:max-w-sm lg:max-w-md overflow-hidden rounded-2xl shadow-2xl border-2 border-[var(--color-charcoal)]/10 bg-white/20 backdrop-blur-sm">
+        {HERO_IMAGES.map((src, index) => (
+          <img
+            key={src}
+            src={src}
+            alt={`Drybar Qatar Showcase ${index + 1}`}
+            className={`absolute inset-0 h-full w-full object-cover transition-all duration-700 ease-in-out ${
+              index === activeImgIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
+            }`}
+            loading={index === 0 ? 'eager' : 'lazy'}
+          />
+        ))}
       </div>
 
       {/* BOTTOM STATEMENT & SCROLL CUE MATCHING REFERENCE FOOTER LAYOUT */}

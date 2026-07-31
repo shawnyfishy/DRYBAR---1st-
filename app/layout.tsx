@@ -7,6 +7,7 @@ import { GrainOverlay } from '@/components/layout/GrainOverlay';
 import { Preloader } from '@/components/layout/Preloader';
 import { MenuProvider } from '@/components/layout/MenuProvider';
 import { OverlayMenu } from '@/components/layout/OverlayMenu';
+import { ContactsDrawer } from '@/components/layout/ContactsDrawer';
 import type { Metadata } from 'next';
 import enMessages from '@/content/en.json';
 
@@ -115,8 +116,9 @@ export default async function RootLayout({
               <Preloader />
               {/* Persistent Grain Overlay */}
               <GrainOverlay />
-              {/* Menu drawer lives outside #page-content so it can push it */}
+              {/* Menu & Contacts drawers live outside #page-content */}
               <OverlayMenu />
+              <ContactsDrawer />
               <div
                 id="page-content"
                 className="page-transition-wrapper min-h-screen transition-opacity duration-300"

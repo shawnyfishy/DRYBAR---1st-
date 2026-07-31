@@ -11,24 +11,14 @@ export function Header() {
   const t = useTranslations('nav');
 
   return (
-    <header className="fixed top-0 inset-x-0 z-40 flex h-16 w-full items-center justify-between bg-[var(--color-cream)]/90 px-4 backdrop-blur-md md:px-8 border-b border-[var(--color-warmgrey)]/15">
+    <header className="fixed top-0 inset-x-0 z-40 flex h-16 w-full items-center justify-between bg-transparent pl-16 md:pl-20 pr-16 md:pr-20 pointer-events-none">
       <a
         href="/"
-        className="flex items-center rounded focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
+        className="flex items-center rounded pointer-events-auto transition-transform hover:scale-105"
         aria-label="Drybar Qatar Home"
       >
-        <Logo className="h-7 w-auto" />
+        <Logo className="h-7 w-auto" variant="dark" />
       </a>
-
-      <button
-        ref={triggerRef}
-        onClick={open}
-        className="rounded px-3 py-1.5 text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-charcoal)] transition-colors hover:text-[var(--color-warmgrey)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
-        aria-expanded={isOpen}
-        aria-controls="overlay-menu"
-      >
-        {t('menu')}
-      </button>
     </header>
   );
 }

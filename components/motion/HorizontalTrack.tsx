@@ -17,7 +17,7 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
   const indexRef = useRef<HTMLSpanElement>(null);
   const [isDesktop, setIsDesktop] = useState(false);
   const [containerTween, setContainerTween] = useState<gsap.core.Tween | null>(null);
-  const { open } = useMenu();
+  const { activeDrawer, toggleMenu, toggleContacts } = useMenu();
 
   const panelCount = React.Children.count(children);
   const cta = getCtaDestination('book', 'horizontal_track');
@@ -38,9 +38,6 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
     const outer = outerRef.current;
     const inner = innerRef.current;
 
-    // Re-measured on every ScrollTrigger refresh (not a static snapshot) so the
-    // tween target stays correct if the initial layout measurement races the
-    // desktop/mobile DOM swap.
     const getDistance = () => inner.scrollWidth - window.innerWidth;
     if (getDistance() <= 0) return;
 
@@ -56,7 +53,6 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
         anticipatePin: 1,
         invalidateOnRefresh: true,
         onUpdate: (self) => {
-          // Direct DOM write, not React state — this fires every scroll frame.
           if (!indexRef.current) return;
           const active = Math.min(panelCount, Math.floor(self.progress * panelCount) + 1);
           indexRef.current.textContent = String(active).padStart(2, '0');
@@ -74,9 +70,6 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
   }, outerRef, [isDesktop]);
 
   if (!isDesktop) {
-    // Mobile view: Vertical flex layout preserving native touch momentum scroll.
-    // No containerAnimation to hand out here — panels fall back to their own
-    // vertical scroll-trigger behavior.
     return (
       <HorizontalScrollProvider value={null}>
         <div className="flex flex-col w-full">{children}</div>
@@ -86,38 +79,49 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
 
   return (
     <HorizontalScrollProvider value={containerTween}>
-    <div ref={outerRef} className="relative w-full overflow-hidden">
-      {/* LEFT EDGE — rotated menu trigger. Lives inside the pinned element so
-          it's only present in the DOM while the horizontal section owns the
-          viewport, and scrolls away naturally with it once un-pinned. */}
+    <div ref={outerRef} className="relative w-full overflow-hidden bg-[var(--color-cream)]">
+      {/* 9TO5STUDIO SITE MENU BUTTON — HOVER EXPANDS & REVEALS YELLOW DOT */}
       <button
-        onClick={open}
-        className="absolute inset-y-0 left-0 z-20 flex w-10 items-center justify-center text-[0.6875rem] font-medium tracking-[0.2em] uppercase text-[var(--color-charcoal)] transition-colors hover:text-[var(--color-warmgrey)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
+        id="site-menu-button"
+        onClick={toggleMenu}
+        aria-label="Toggle Menu Drawer"
+        className="group fixed inset-y-0 left-0 z-50 flex w-14 hover:w-20 flex-col items-center justify-center bg-[#111111] text-white shadow-2xl transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
       >
-        <span className="[writing-mode:vertical-rl] rotate-180">Menu</span>
+        <span className="text-[0.6875rem] font-bold tracking-[0.2em] uppercase [writing-mode:vertical-rl] rotate-180">
+          {activeDrawer === 'menu' ? 'Close' : 'Menu'}
+        </span>
+
+        {/* 9TO5STUDIO SIGNATURE YELLOW ACTIVE / HOVER INDICATOR DOT */}
+        <div className={`absolute bottom-8 size-2.5 rounded-full bg-[#FEDD30] transition-all duration-300 ${
+          activeDrawer === 'menu' ? 'opacity-100 scale-125' : 'opacity-0 group-hover:opacity-100 group-hover:scale-110'
+        }`} />
       </button>
 
-      {/* RIGHT EDGE — rotated booking CTA, persistent throughout the scroll. */}
-      <a
-        href={cta.href}
-        target={cta.target}
-        rel={cta.target === '_blank' ? 'noopener noreferrer' : undefined}
-        className="absolute inset-y-0 right-0 z-20 flex w-10 items-center justify-center text-[0.6875rem] font-medium tracking-[0.2em] uppercase text-[var(--color-charcoal)] transition-colors hover:text-[var(--color-warmgrey)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
+      {/* 9TO5STUDIO SITE CONTACTS BUTTON — HOVER EXPANDS & REVEALS YELLOW DOT */}
+      <button
+        id="site-contacts-button"
+        onClick={toggleContacts}
+        aria-label="Toggle Contacts Drawer"
+        className="group fixed inset-y-0 right-0 z-50 flex w-14 hover:w-20 flex-col items-center justify-center bg-[#111111] text-white shadow-2xl transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
       >
-        <span className="[writing-mode:vertical-rl] rotate-180">{cta.labelEn}</span>
-      </a>
+        <span className="text-[0.6875rem] font-bold tracking-[0.2em] uppercase [writing-mode:vertical-rl] rotate-180">
+          {activeDrawer === 'contacts' ? 'Close' : 'Contacts'}
+        </span>
 
-      {/* BOTTOM-LEFT — live panel index, updated per scroll frame above. */}
-      <div className="absolute bottom-6 left-6 z-20 flex items-baseline gap-2 text-[0.6875rem] font-medium tracking-[0.15em] text-[var(--color-charcoal)] tabular-nums">
-        <span ref={indexRef}>01</span>
-        <span className="text-[var(--color-warmgrey)]">/ {String(panelCount).padStart(2, '0')}</span>
-      </div>
+        {/* 9TO5STUDIO SIGNATURE YELLOW ACTIVE / HOVER INDICATOR DOT */}
+        <div className={`absolute bottom-8 size-2.5 rounded-full bg-[#FEDD30] transition-all duration-300 ${
+          activeDrawer === 'contacts' ? 'opacity-100 scale-125' : 'opacity-0 group-hover:opacity-100 group-hover:scale-110'
+        }`} />
+      </button>
 
-      <div
-        ref={innerRef}
-        className="flex h-screen w-max flex-nowrap will-change-transform"
-      >
-        {children}
+      {/* FRAMED BOX CONTAINER BOUNDED BETWEEN THE 56PX SIDEBARS */}
+      <div className="w-[calc(100vw-112px)] mx-auto border-x border-[var(--color-charcoal)]/15">
+        <div
+          ref={innerRef}
+          className="flex h-screen w-max flex-nowrap will-change-transform"
+        >
+          {children}
+        </div>
       </div>
     </div>
     </HorizontalScrollProvider>

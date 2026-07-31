@@ -54,7 +54,14 @@ export default function GiftsPage() {
                       </span>
                     </div>
 
-                    <Placeholder ratio="4:5" label="gift card packaging, yellow ribbon" />
+                    <div className="overflow-hidden rounded-xl aspect-[4/5] bg-[var(--color-cream)] border border-[var(--color-warmgrey)]/20">
+                      <img
+                        src={`/images/${10 + idx}.webp`}
+                        alt={`Drybar Membership ${item.sessions} Sessions`}
+                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                        loading="lazy"
+                      />
+                    </div>
 
                     {/* BENEFIT AS ONE LINE BENEATH */}
                     <p className="text-base font-medium leading-snug text-[var(--color-charcoal)]">
