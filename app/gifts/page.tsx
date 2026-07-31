@@ -92,16 +92,6 @@ export default function GiftsPage() {
           </div>
         </Reveal>
 
-        {/* MEMBERSHIP TERMS CONTAINER WITH TODO_TERMS MARKER (STEP 3) */}
-        <Reveal className="rounded-xl border border-[var(--color-warmgrey)]/20 bg-white/60 p-6">
-          <h3 className="text-sm font-medium tracking-[0.15em] uppercase text-[var(--color-warmgrey)]">
-            Membership Terms
-          </h3>
-          <p className="mt-2 text-xs leading-relaxed text-[var(--color-warmgrey)]">
-            TODO_TERMS: Official commercial membership terms (validity, upfront cost, transferability, add-on eligibility, applicable session discount rules, expiration, and refund policy) match written agreement at enrollment.
-          </p>
-        </Reveal>
-
         {/* GIFT CARDS SECTION SHELL (STEP 4) */}
         <Reveal className="flex flex-col gap-6 rounded-2xl border border-[var(--color-warmgrey)]/20 bg-white p-8 shadow-sm">
           <div>

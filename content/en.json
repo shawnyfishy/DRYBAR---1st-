@@ -31,11 +31,11 @@
     "paragraph2": "Pricing follows your hair length and the style chosen, so you always know what to expect before you step into a chair."
   },
   "ctaIndex": {
-    "bookNow": "Book a Chair",
+    "bookNow": "Book Now",
     "priceList": "Price List",
     "giftsMemberships": "Gifts & Memberships",
     "managePrompt": "Already booked? Reschedule or cancel your visit →",
-    "fallbackNotice": "* Direct online booking opening shortly. Message us on WhatsApp to book a chair."
+    "fallbackNotice": "Book Now"
   },
   "stylesStrip": {
     "title": "Our Signature Styles",
