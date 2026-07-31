@@ -12,30 +12,30 @@ export function StylesStrip() {
   const services = getServicesData();
 
   return (
-    <section className="flex min-h-[100dvh] w-[100vw] flex-shrink-0 items-center justify-center [background-image:var(--backgroundImage-grad-asagiri)] py-20 px-16 md:px-20 overflow-hidden">
+    <section className="flex min-h-screen w-full md:w-[100vw] md:flex-shrink-0 items-center justify-center [background-image:var(--backgroundImage-grad-asagiri)] py-16 px-4 sm:px-6 md:px-12 lg:px-20 md:py-24 overflow-hidden">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8">
         <div>
           <SplitLines
             granularity="word"
-            className="text-[clamp(2rem,7vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)]"
+            className="text-[clamp(1.75rem,6vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)]"
           >
             {t('title')}
           </SplitLines>
           <Reveal delay={0.2}>
-            <p className="mt-2 text-[clamp(1rem,3.5vw,1.125rem)] text-[var(--color-warmgrey)]">
+            <p className="mt-2 text-[clamp(0.9375rem,3.2vw,1.125rem)] text-[var(--color-warmgrey)]">
               {t('subtitle')}
             </p>
           </Reveal>
         </div>
 
         {/* CARDS: HORIZONTAL SCROLL CAROUSEL */}
-        <div className="flex w-full snap-x snap-mandatory gap-6 overflow-x-auto pb-6 md:grid md:grid-cols-3 lg:grid-cols-4 md:overflow-visible">
+        <div className="flex w-full snap-x snap-mandatory gap-4 sm:gap-6 overflow-x-auto pb-6 md:grid md:grid-cols-3 lg:grid-cols-4 md:overflow-visible">
           {services.hairStyling.slice(0, 4).map((style, idx) => {
             const imageSrc = `/images/${6 + idx}.webp`;
 
             return (
               <Reveal key={style.id} delay={idx * 0.05}>
-                <div className="flex w-[260px] flex-none snap-center flex-col gap-4 rounded-xl border border-[var(--color-warmgrey)]/20 bg-white p-4 shadow-sm md:w-auto">
+                <div className="flex w-[82vw] max-w-[280px] flex-none snap-center flex-col gap-4 rounded-xl border border-[var(--color-warmgrey)]/20 bg-white p-4 shadow-sm md:w-auto">
                   <div className="relative overflow-hidden rounded-lg aspect-[9/16] bg-[var(--color-cream)] border border-[var(--color-warmgrey)]/10">
                     <Parallax speed={0.2}>
                       <img

@@ -66,7 +66,7 @@ export function AirWipe() {
   return (
     <div
       ref={containerRef}
-      className="relative flex h-[100dvh] w-[100vw] flex-shrink-0 flex-col justify-between overflow-hidden [background-image:var(--backgroundImage-grad-asagiri)] pt-20 pb-8 px-16 md:pt-24 md:pb-12 md:px-20 text-center"
+      className="relative flex min-h-[100dvh] w-full md:w-[100vw] md:flex-shrink-0 flex-col justify-between overflow-hidden [background-image:var(--backgroundImage-grad-asagiri)] pt-20 pb-8 px-4 sm:px-6 md:px-12 lg:px-20 md:pt-24 md:pb-12 text-center"
     >
       {/* SWEEP OVERLAY ON --GRAD-YUZU */}
       <div className="airwipe-sweep absolute inset-0 [background-image:var(--backgroundImage-grad-yuzu)]" />

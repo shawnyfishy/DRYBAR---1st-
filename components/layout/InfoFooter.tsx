@@ -7,7 +7,9 @@ export function InfoFooter() {
   const t = useTranslations('footer');
   const tBrand = useTranslations('brand');
 
-  const mapsUrl = process.env.NEXT_PUBLIC_MAPS_URL || '#';
+  const mapsUrl =
+    process.env.NEXT_PUBLIC_MAPS_URL ||
+    'https://www.google.com/maps?q=25.3784140,51.5375250&entry=gps&shh=CAE&lucs=,94297699,94231188,94280568,47071704,94218641,94282134,100813464,94286869,100820242&g_ep=CAISEjI2LjI3LjIuOTM5NTc4NzgwMBgAINeCAypTLDk0Mjk3Njk5LDk0MjMxMTg4LDk0MjgwNTY4LDQ30TcxNzA0LDk0MjE4NjQxLDk0MjgyMTM0LDEwMDgxMzQ2NCw5NDI4Njg2OSwxMDA4MjAyNDJCAlFB&skid=fd390b11-57ad-43fc-9b33-919ed4eb01c5&g_st=ii';
 
   return (
     <footer className="w-full [background-image:var(--backgroundImage-grad-sumi)] py-16 text-[var(--color-cream)]">
@@ -66,7 +68,7 @@ export function InfoFooter() {
                 Phone: +974 7773 0600
               </a>
               <a
-                href="https://instagram.com/thedrybar.qatar"
+                href="https://www.instagram.com/thedrybar.qatar"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-2 inline-flex text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-yellow)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"

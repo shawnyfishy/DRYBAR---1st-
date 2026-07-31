@@ -115,10 +115,10 @@ export function Hero() {
   return (
     <section 
       ref={heroRef} 
-      className="relative flex min-h-[100dvh] w-[100vw] flex-shrink-0 flex-col justify-between bg-[#FEDD30] px-16 pt-20 pb-8 md:px-20 md:pt-24 md:pb-12 overflow-hidden"
+      className="relative flex min-h-[100dvh] w-full md:w-[100vw] md:flex-shrink-0 flex-col justify-between bg-[#FEDD30] px-4 pt-20 pb-8 sm:px-6 md:px-12 lg:px-20 md:pt-24 md:pb-12 overflow-hidden"
     >
       {/* TOP HEADER TRACKING WORDS MATCHING REFERENCE 9to5studio BANNERS */}
-      <div className="flex w-full items-center justify-between text-[clamp(1.25rem,4vw,3.5rem)] font-bold tracking-[0.1em] uppercase text-[var(--color-charcoal)]">
+      <div className="flex w-full items-center justify-between text-[clamp(0.9375rem,3.2vw,3.5rem)] font-bold tracking-[0.05em] sm:tracking-[0.1em] uppercase text-[var(--color-charcoal)]">
         <span className="hero-top-word inline-block">DRYBAR</span>
         <span className="hero-top-word inline-block">QATAR</span>
         <span className="hero-top-word inline-block hidden sm:inline-block">JUST</span>
@@ -126,7 +126,7 @@ export function Hero() {
       </div>
 
       {/* CENTER FLOATING HERO IMAGE SLIDESHOW MATCHING REFERENCE 9to5studio PROJECT THUMBNAILS */}
-      <div className="hero-center-card group relative my-auto mx-auto aspect-square w-full max-w-xs sm:max-w-sm lg:max-w-md overflow-hidden rounded-2xl shadow-2xl border-2 border-[var(--color-charcoal)]/10 bg-white/20 backdrop-blur-sm">
+      <div className="hero-center-card group relative my-4 sm:my-auto mx-auto aspect-square w-full max-w-[220px] xs:max-w-[260px] sm:max-w-sm lg:max-w-md overflow-hidden rounded-2xl shadow-2xl border-2 border-[var(--color-charcoal)]/10 bg-white/20 backdrop-blur-sm">
         {HERO_IMAGES.map((src, index) => (
           <img
             key={src}
@@ -141,8 +141,8 @@ export function Hero() {
       </div>
 
       {/* BOTTOM STATEMENT & SCROLL CUE MATCHING REFERENCE FOOTER LAYOUT */}
-      <div className="flex w-full flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-        <p className="hero-paragraph max-w-2xl text-[clamp(1.125rem,3vw,2.25rem)] font-normal leading-[1.15] tracking-[-0.015em] text-[var(--color-charcoal)]">
+      <div className="flex w-full flex-col items-start justify-between gap-4 sm:gap-6 md:flex-row md:items-end">
+        <p className="hero-paragraph max-w-2xl text-[clamp(1rem,3vw,2.25rem)] font-normal leading-[1.18] sm:leading-[1.15] tracking-[-0.015em] text-[var(--color-charcoal)]">
           {t('paragraph')}
         </p>
 

@@ -96,42 +96,42 @@ export function OverlayMenu() {
           drawer permanently stuck off-screen even mid-"open" tween. */}
       <div
         ref={drawerRef}
-        className="flex h-full w-full max-w-sm flex-col justify-between [background-image:var(--backgroundImage-grad-sumi)] p-8 text-[var(--color-cream)] shadow-2xl md:p-10 border-r border-[var(--color-warmgrey)]/20"
+        className="flex h-full w-full max-w-[85vw] sm:max-w-sm flex-col justify-between [background-image:var(--backgroundImage-grad-sumi)] p-6 sm:p-8 md:p-10 text-[var(--color-cream)] shadow-2xl border-r border-[var(--color-warmgrey)]/20 overflow-y-auto"
       >
         {/* TOP LOGO & CLOSE BUTTON */}
-        <div className="flex items-center justify-between border-b border-[var(--color-warmgrey)]/20 pb-6">
+        <div className="flex items-center justify-between border-b border-[var(--color-warmgrey)]/20 pb-5">
           <Logo className="h-6 w-auto" />
           <button
             ref={closeButtonRef}
             onClick={close}
-            className="rounded px-3 py-1 text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-cream)] transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"
+            className="rounded px-3 py-2 text-[0.6875rem] font-bold tracking-[0.15em] uppercase text-[var(--color-cream)] transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] min-h-[44px] flex items-center justify-center cursor-pointer"
           >
-            {t('close')}
+            {t('close')} [✕]
           </button>
         </div>
 
         {/* NAVIGATION SECTION */}
-        <div className="menu-section flex flex-col gap-8 my-auto py-8">
-          <div className="grid grid-cols-[100px_1fr] items-start gap-4">
+        <div className="menu-section flex flex-col gap-6 sm:gap-8 my-auto py-6">
+          <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] items-start gap-2 sm:gap-4">
             <span className="text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-warmgrey)]">
               Navigation
             </span>
-            <nav className="flex flex-col gap-3 font-normal text-[clamp(1.75rem,3vw,2.25rem)] leading-none tracking-[-0.02em]">
+            <nav className="flex flex-col gap-3 font-normal text-[clamp(1.5rem,5vw,2.25rem)] leading-none tracking-[-0.02em]">
               <a
                 href="/"
-                className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"
+                className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
                 <span className="text-[var(--color-yellow)]">•</span> {t('home')}
               </a>
               <a
                 href="/prices"
-                className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"
+                className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
                 {t('prices')}
               </a>
               <a
                 href="/gifts"
-                className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"
+                className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
                 {t('gifts')}
               </a>
@@ -139,16 +139,16 @@ export function OverlayMenu() {
           </div>
 
           {/* FOLLOW SECTION */}
-          <div className="grid grid-cols-[100px_1fr] items-start gap-4 border-t border-[var(--color-warmgrey)]/20 pt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] items-start gap-2 sm:gap-4 border-t border-[var(--color-warmgrey)]/20 pt-4 sm:pt-6">
             <span className="text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-warmgrey)]">
               Follow
             </span>
             <div className="flex flex-col gap-2">
               <a
-                href="https://instagram.com/thedrybar.qatar"
+                href="https://www.instagram.com/thedrybar.qatar"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="menu-item-link text-lg font-medium text-[var(--color-cream)] hover:text-[var(--color-yellow)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"
+                className="menu-item-link text-base sm:text-lg font-medium text-[var(--color-cream)] hover:text-[var(--color-yellow)] hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
                 INSTAGRAM
               </a>
@@ -156,7 +156,7 @@ export function OverlayMenu() {
           </div>
 
           {/* INFO SECTION */}
-          <div className="grid grid-cols-[100px_1fr] items-start gap-4 border-t border-[var(--color-warmgrey)]/20 pt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-[100px_1fr] items-start gap-2 sm:gap-4 border-t border-[var(--color-warmgrey)]/20 pt-4 sm:pt-6">
             <span className="text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-warmgrey)]">
               Info
             </span>
@@ -175,7 +175,7 @@ export function OverlayMenu() {
       </div>
 
       {/* RIGHT BACKDROP CLICK TO CLOSE */}
-      <div className="hidden flex-1 md:block" onClick={close} />
+      <div className="flex-1" onClick={close} />
     </div>
   );
 }

@@ -14,7 +14,7 @@ export function PriceTable() {
         {services.hairStyling.map((item) => (
           <div
             key={item.id}
-            className="flex flex-col gap-4 rounded-xl border border-[var(--color-warmgrey)]/20 bg-white p-5 shadow-sm"
+            className="flex flex-col gap-3 sm:gap-4 rounded-xl border border-[var(--color-warmgrey)]/20 bg-white p-4 sm:p-5 shadow-sm"
           >
             <h4 className="text-lg font-medium text-[var(--color-charcoal)] border-b border-[var(--color-warmgrey)]/15 pb-2 text-start">
               {item.name_en}

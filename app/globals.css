@@ -24,22 +24,22 @@
   --font-arabic: "IBM Plex Sans Arabic", "Noto Kufi Arabic", var(--font-latin);
 
   /* Type Scale Tokens */
-  --text-display: clamp(3.25rem, 15.5vw, 11rem);
+  --text-display: clamp(2.25rem, 12vw, 11rem);
   --text-display--line-height: 0.86;
   --text-display--letter-spacing: -0.035em;
   --text-display--font-weight: 400;
 
-  --text-h2: clamp(2rem, 7vw, 4.5rem);
+  --text-h2: clamp(1.75rem, 6vw, 4.5rem);
   --text-h2--line-height: 0.94;
   --text-h2--letter-spacing: -0.022em;
   --text-h2--font-weight: 400;
 
-  --text-h3: clamp(1.25rem, 4.4vw, 1.875rem);
+  --text-h3: clamp(1.125rem, 4vw, 1.875rem);
   --text-h3--line-height: 1.12;
   --text-h3--letter-spacing: -0.012em;
   --text-h3--font-weight: 500;
 
-  --text-body: clamp(1rem, 3.5vw, 1.125rem);
+  --text-body: clamp(0.9375rem, 3.2vw, 1.125rem);
   --text-body--line-height: 1.55;
   --text-body--letter-spacing: 0;
   --text-body--font-weight: 400;

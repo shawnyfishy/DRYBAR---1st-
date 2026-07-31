@@ -72,7 +72,7 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
   if (!isDesktop) {
     return (
       <HorizontalScrollProvider value={null}>
-        <div className="flex flex-col w-full">{children}</div>
+        <div className="flex flex-col w-full min-h-screen overflow-x-hidden bg-[var(--color-cream)]">{children}</div>
       </HorizontalScrollProvider>
     );
   }

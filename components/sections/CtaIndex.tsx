@@ -52,8 +52,8 @@ export function CtaIndex() {
   };
 
   return (
-    <section className="flex min-h-[844px] w-[100vw] flex-shrink-0 flex-col justify-center bg-[var(--color-cream)] py-12 px-16 md:px-20 border-t border-b border-[var(--color-warmgrey)]/20 overflow-hidden">
-      <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between gap-6">
+    <section className="flex min-h-fit w-full md:w-[100vw] md:flex-shrink-0 flex-col justify-center bg-[var(--color-cream)] py-12 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-b border-[var(--color-warmgrey)]/20 overflow-hidden">
+      <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between gap-4 sm:gap-6">
         {rows.map((row, idx) => {
           const isHovered = hoveredId === row.id;
           const isDimmed = hoveredId !== null && !isHovered;
@@ -68,7 +68,7 @@ export function CtaIndex() {
                 onMouseEnter={() => setHoveredId(row.id)}
                 onMouseLeave={() => setHoveredId(null)}
                 onMouseMove={handleMouseMove}
-                className={`group relative flex min-h-[88px] w-full items-center justify-between overflow-hidden rounded-xl border border-[var(--color-warmgrey)]/20 p-6 
+                className={`group relative flex min-h-[72px] sm:min-h-[88px] w-full items-center justify-between overflow-hidden rounded-xl border border-[var(--color-warmgrey)]/20 p-4 sm:p-6 
                   transition-all duration-300 ease-[cubic-bezier(0.33,1,0.68,1)]
                   active:scale-[0.985] active:transition-transform active:duration-100
                   focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]
@@ -90,7 +90,7 @@ export function CtaIndex() {
                 </div>
 
                 {/* ROW LABEL */}
-                <span className="z-10 text-start text-[clamp(2rem,6vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)] transition-transform duration-300 group-hover:translate-x-3 rtl:group-hover:-translate-x-3">
+                <span className="z-10 text-start text-[clamp(1.5rem,5vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)] transition-transform duration-300 group-hover:translate-x-3 rtl:group-hover:-translate-x-3">
                   {row.label}
                 </span>
 

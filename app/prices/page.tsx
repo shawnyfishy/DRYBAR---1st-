@@ -15,7 +15,7 @@ export default function PricesPage() {
   return (
     <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)] overflow-x-hidden">
       <Header />
-      <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col p-6 pt-24 md:p-12 md:pt-28 gap-12">
+      <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 py-20 sm:px-6 md:p-12 md:pt-28 gap-8 sm:gap-12">
         {/* PAGE TITLE & DYNAMIC SUMMARY PRICE */}
         <Reveal className="flex flex-col gap-3">
           <h1 className="text-[clamp(2rem,7vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)]">

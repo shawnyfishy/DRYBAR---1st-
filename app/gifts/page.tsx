@@ -13,7 +13,7 @@ export default function GiftsPage() {
   return (
     <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)] overflow-x-hidden">
       <Header />
-      <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col p-6 pt-24 md:p-12 md:pt-28 gap-16">
+      <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 py-20 sm:px-6 md:p-12 md:pt-28 gap-10 sm:gap-16">
         {/* TITLE & SUBTITLE */}
         <Reveal className="flex flex-col gap-3">
           <h1 className="text-[clamp(2rem,7vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)]">
@@ -37,7 +37,7 @@ export default function GiftsPage() {
               return (
                 <div
                   key={item.id}
-                  className={`flex flex-col justify-between rounded-2xl border border-[var(--color-warmgrey)]/20 p-8 shadow-sm transition-all duration-300 ${
+                  className={`flex flex-col justify-between rounded-2xl border border-[var(--color-warmgrey)]/20 p-5 sm:p-8 shadow-sm transition-all duration-300 ${
                     isAccent
                       ? '[background-image:var(--backgroundImage-grad-yuzu)] border-[var(--color-yellow)]'
                       : 'bg-white'
