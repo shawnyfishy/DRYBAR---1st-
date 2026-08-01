@@ -4,6 +4,8 @@ import { InfoFooter } from '@/components/layout/InfoFooter';
 import { CtaRow } from '@/components/ui/CtaRow';
 import { getServicesData } from '@/lib/services';
 import { Reveal } from '@/components/motion/Reveal';
+import { FaqAccordion } from '@/components/ui/FaqAccordion';
+import { FAQ_ITEMS, FAQ_HEADING, FAQ_SUBHEADING } from '@/lib/faq';
 
 export const dynamic = 'force-static';
 
@@ -105,6 +107,31 @@ export default function GiftsPage() {
           </div>
           <div className="flex justify-start">
             <CtaRow label="Inquire About Gift Cards" destination="whatsapp" campaign="gift_card_inquire" />
+          </div>
+        </Reveal>
+
+        {/* FOUNDING MEMBERSHIP FAQ — EXPANDABLE SECTION */}
+        <Reveal className="flex flex-col gap-6">
+          <div className="flex flex-col gap-2">
+            <span className="text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-warmgrey)]">
+              Good to know
+            </span>
+            <h2 className="text-[clamp(1.25rem,4.4vw,1.875rem)] font-medium text-[var(--color-charcoal)]">
+              {FAQ_HEADING}
+            </h2>
+            <p className="max-w-2xl text-[clamp(1rem,3.5vw,1.125rem)] text-[var(--color-warmgrey)]">
+              {FAQ_SUBHEADING}
+            </p>
+          </div>
+
+          <FaqAccordion items={FAQ_ITEMS} />
+
+          <div className="flex justify-start">
+            <CtaRow
+              label="Ask About Founding Membership"
+              destination="whatsapp"
+              campaign="founding_membership_inquire"
+            />
           </div>
         </Reveal>
       </main>

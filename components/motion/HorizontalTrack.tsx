@@ -95,7 +95,14 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
       tween.scrollTrigger?.kill();
       tween.kill();
     };
-  }, outerRef, [isDesktop]);
+    // `isMounted` MUST stay in these deps. The first render returns the
+    // non-desktop fallback tree, so outerRef/innerRef are not attached yet and
+    // this effect bails on the null ref. Only the post-mount re-render attaches
+    // them, so without `isMounted` here the effect never re-runs and the pin is
+    // never built. On a full page load that was masked by hydration flipping
+    // `isDesktop` false->true (re-running this by accident); on a client-side
+    // navigation there is no hydration, so the home page arrived unpinned.
+  }, outerRef, [isDesktop, isMounted]);
 
   if (!isMounted || !isDesktop) {
     return (

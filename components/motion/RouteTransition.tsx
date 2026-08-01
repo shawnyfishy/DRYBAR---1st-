@@ -183,7 +183,9 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
 
       if (prefersReducedMotion) {
         const pageContent = document.getElementById('page-content');
-        if (pageContent) gsap.set(pageContent, { opacity: 1, y: 0 });
+        // Same containing-block hazard as the animated paths: settle opacity
+        // but leave no transform behind.
+        if (pageContent) gsap.set(pageContent, { opacity: 1, clearProps: 'transform' });
         isTransitioningRef.current = false;
         setIsTransitioning(false);
         return;
@@ -228,11 +230,15 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           );
 
         // ENTER: incoming #page-content opacity 0 / y 24px to opacity 1 / y 0, 0.6s, EASE.out, starting 0.25s into REVEAL
+        // clearProps drops the inline transform once settled. Even an identity
+        // `transform: translate(0,0)` makes #page-content the containing block
+        // for every `position: fixed` descendant, which silently breaks
+        // ScrollTrigger's pin on the home page and the fixed side rails.
         if (pageContent) {
           revealTl.fromTo(
             pageContent,
             { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.6, ease: EASE.out },
+            { opacity: 1, y: 0, duration: 0.6, ease: EASE.out, clearProps: 'transform' },
             0.25
           );
         }
@@ -268,7 +274,7 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           popTl.fromTo(
             pageContent,
             { opacity: 0, y: 24 },
-            { opacity: 1, y: 0, duration: 0.5, ease: EASE.out },
+            { opacity: 1, y: 0, duration: 0.5, ease: EASE.out, clearProps: 'transform' },
             0.55
           );
         }
