@@ -5,9 +5,12 @@ import { PriceTable } from '@/components/ui/PriceTable';
 import { CtaRow } from '@/components/ui/CtaRow';
 import { getServicesData } from '@/lib/services';
 import { Reveal } from '@/components/motion/Reveal';
+import { safeText } from '@/lib/content';
 
 // STEP 7 Feature Flag: Home Services (default OFF)
 const SHOW_HOME_SERVICES = false;
+
+export const dynamic = 'force-static';
 
 export default function PricesPage() {
   const services = getServicesData();
@@ -78,7 +81,7 @@ export default function PricesPage() {
         {SHOW_HOME_SERVICES && (
           <Reveal className="rounded-xl border border-[var(--color-warmgrey)]/20 bg-white p-6">
             <h3 className="text-lg font-medium text-[var(--color-charcoal)]">Home Services</h3>
-            <p className="text-sm text-[var(--color-warmgrey)]">TODO_HOME_SERVICES: Details available upon request.</p>
+            <p className="text-sm text-[var(--color-warmgrey)]">{safeText('TODO_HOME_SERVICES: Details available upon request.', 'Details available upon request.')}</p>
           </Reveal>
         )}
 

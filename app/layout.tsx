@@ -1,7 +1,7 @@
 import './globals.css';
 import React from 'react';
+import { Inter_Tight } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
 import { SmoothScrollProvider } from '@/components/motion/SmoothScrollProvider';
 import { GrainOverlay } from '@/components/layout/GrainOverlay';
 import { Preloader } from '@/components/layout/Preloader';
@@ -10,6 +10,12 @@ import { OverlayMenu } from '@/components/layout/OverlayMenu';
 import { ContactsDrawer } from '@/components/layout/ContactsDrawer';
 import type { Metadata } from 'next';
 import enMessages from '@/content/en.json';
+
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter-tight-fallback',
+});
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://drybarqatar.com';
 
@@ -32,11 +38,20 @@ export const metadata: Metadata = {
     title: 'Drybar Qatar | Blowouts Only • No Cuts, No Colour',
     description: 'We do one thing and we are obsessed with doing it best. Blow-dry bar at Gewan Island, The Pearl, Doha.',
     siteName: 'Drybar Qatar',
+    images: [
+      {
+        url: '/brand-logo.png',
+        width: 1200,
+        height: 630,
+        alt: 'Drybar Qatar • Gewan Island, The Pearl, Doha',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Drybar Qatar | Blowouts Only • No Cuts, No Colour',
     description: 'Blowouts and hair styling at Gewan Island, The Pearl, Doha.',
+    images: ['/brand-logo.png'],
   },
 };
 
@@ -79,25 +94,22 @@ const jsonLd = {
   ]
 };
 
-export default async function RootLayout({
+// NOTE: Static message import for production SSG optimization.
+// Restore dynamic getMessages() from 'next-intl/server' when [locale] segment and native Arabic copy land.
+const messages = enMessages;
+
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  let messages = enMessages;
-  try {
-    const fetched = await getMessages();
-    if (fetched) messages = fetched as any;
-  } catch {
-    messages = enMessages;
-  }
 
   const zenotiHost = process.env.NEXT_PUBLIC_ZENOTI_BOOK_URL 
     ? new URL(process.env.NEXT_PUBLIC_ZENOTI_BOOK_URL).origin 
     : 'https://drybarqatar.zenoti.com';
 
   return (
-    <html lang="en" dir="ltr" className="bg-[var(--color-cream)]">
+    <html lang="en" dir="ltr" className={`${interTight.variable} bg-[var(--color-cream)]`}>
       <head>
         {/* Preconnect to Zenoti host to prevent DNS lookup stalls on booking redirect */}
         <link rel="preconnect" href={zenotiHost} crossOrigin="anonymous" />

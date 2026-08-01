@@ -19,8 +19,14 @@
     "line1": "No Cuts.",
     "line2": "No Colour.",
     "line3": "Just Blowouts.",
-    "paragraph": "We do one thing and we are obsessed with doing it best. Welcome to an hour that is yours at Gewan Island.",
-    "scrollCue": "Scroll to discover"
+    "eyebrow": "Gewan Island · The Pearl · Doha",
+    "displayLine1": "An hour",
+    "displayLine2": "that is",
+    "displayLine3": "yours.",
+    "statement": "No cuts. No colour. One blowout, and every hour we have spent learning to do it beautifully.",
+    "cta": "Book a chair",
+    "meta": "Open every day, 9am to 9pm",
+    "scrollCue": "Scroll"
   },
   "airWipe": {
     "statement": "An hour that is yours."

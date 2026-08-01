@@ -68,7 +68,7 @@ export function Preloader() {
   const words = TAGLINE.split(' ');
 
   return (
-    <div className="preloader-container fixed inset-0 z-50 flex flex-col justify-between bg-[#FEDD30] p-8 text-[var(--color-charcoal)] will-change-transform">
+    <div className="preloader-container fixed inset-0 z-50 flex flex-col justify-between bg-[var(--color-yellow)] p-8 text-[var(--color-charcoal)] will-change-transform">
       {/* TOP-LEFT CORNER LABEL */}
       <div className="text-xs tracking-[0.2em] uppercase text-[var(--color-charcoal)]/70">
         <span>DRYBAR QATAR</span>

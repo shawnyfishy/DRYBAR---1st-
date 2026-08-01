@@ -10,11 +10,10 @@ export function TheOneThing() {
   const t = useTranslations('theOneThing');
 
   return (
-    <section className="relative flex min-h-screen w-full md:w-[100vw] md:flex-shrink-0 flex-col justify-between [background-image:var(--backgroundImage-grad-asagiri)] pt-20 pb-8 px-4 sm:px-6 md:px-12 lg:px-20 md:pt-24 md:pb-12 overflow-hidden">
+    <section className="relative flex min-h-screen w-full md:w-[calc(100vw-(var(--spacing-rail)*2))] md:flex-shrink-0 flex-col justify-between [background-image:var(--backgroundImage-grad-asagiri)] pt-20 pb-8 px-4 sm:px-6 md:px-12 lg:px-20 md:pt-24 md:pb-12 overflow-hidden">
       {/* TOP TRACKING HEADER */}
       <Reveal>
         <div className="relative z-10 flex w-full items-center justify-between text-[0.6875rem] font-bold tracking-[0.2em] uppercase text-[var(--color-charcoal)]">
-          <span className="font-mono text-[var(--color-charcoal)]/70">[03 / 05]</span>
           <span>THE ONE THING • CONCEPT</span>
           <span className="hidden sm:inline">GEWAN ISLAND</span>
         </div>

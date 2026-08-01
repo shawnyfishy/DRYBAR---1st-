@@ -15,6 +15,7 @@
 
 # misc
 .DS_Store
+._*
 *.pem
 Thumbs.db
 
@@ -37,3 +38,8 @@ pnpm-debug.log*
 # reference-site captures (not our IP to redistribute) — local QA only
 /docs/reference-shots/
 /docs/motion-shots/
+
+# large source assets and redundant duplicates
+/pictures/
+/reference website screen recording/
+/drybar-qatar/

@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState, useLayoutEffect, useSyncExternalStore } from 'react';
 import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGsap } from './useGsap';
 import { useMenu } from '@/components/layout/MenuProvider';
 import { getCtaDestination } from '@/lib/zenoti';
@@ -11,26 +12,52 @@ interface HorizontalTrackProps {
   children: React.ReactNode;
 }
 
+const DESKTOP_QUERY = '(min-width: 768px)';
+
+function subscribeDesktop(callback: () => void) {
+  if (typeof window === 'undefined') return () => {};
+  const mql = window.matchMedia(DESKTOP_QUERY);
+
+  const handler = () => {
+    callback();
+    if (typeof window !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  };
+
+  mql.addEventListener('change', handler);
+  return () => mql.removeEventListener('change', handler);
+}
+
+function getDesktopSnapshot() {
+  if (typeof window === 'undefined') return false;
+  return window.matchMedia(DESKTOP_QUERY).matches;
+}
+
+function getDesktopServerSnapshot() {
+  return false;
+}
+
 export function HorizontalTrack({ children }: HorizontalTrackProps) {
   const outerRef = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
   const indexRef = useRef<HTMLSpanElement>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
   const [containerTween, setContainerTween] = useState<gsap.core.Tween | null>(null);
+  const [isMounted, setIsMounted] = useState(false);
   const { activeDrawer, toggleMenu, toggleContacts } = useMenu();
+
+  const isDesktop = useSyncExternalStore(
+    subscribeDesktop,
+    getDesktopSnapshot,
+    getDesktopServerSnapshot
+  );
+
+  useLayoutEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const panelCount = React.Children.count(children);
   const cta = getCtaDestination('book', 'horizontal_track');
-
-  useEffect(() => {
-    const checkDesktop = () => {
-      setIsDesktop(window.innerWidth >= 768);
-    };
-
-    checkDesktop();
-    window.addEventListener('resize', checkDesktop);
-    return () => window.removeEventListener('resize', checkDesktop);
-  }, []);
 
   useGsap((self) => {
     if (!isDesktop || !outerRef.current || !innerRef.current) return;
@@ -38,7 +65,8 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
     const outer = outerRef.current;
     const inner = innerRef.current;
 
-    const getDistance = () => inner.scrollWidth - window.innerWidth;
+    const frame = inner.parentElement as HTMLElement;
+    const getDistance = () => inner.scrollWidth - frame.clientWidth;
     if (getDistance() <= 0) return;
 
     const tween = gsap.to(inner, {
@@ -69,7 +97,7 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
     };
   }, outerRef, [isDesktop]);
 
-  if (!isDesktop) {
+  if (!isMounted || !isDesktop) {
     return (
       <HorizontalScrollProvider value={null}>
         <div className="flex flex-col w-full min-h-screen overflow-x-hidden bg-[var(--color-cream)]">{children}</div>
@@ -85,14 +113,14 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
         id="site-menu-button"
         onClick={toggleMenu}
         aria-label="Toggle Menu Drawer"
-        className="group fixed inset-y-0 left-0 z-50 flex w-14 hover:w-20 flex-col items-center justify-center bg-[#111111] text-white shadow-2xl transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
+        className="group fixed inset-y-0 left-0 z-50 flex w-[var(--spacing-rail)] hover:w-20 flex-col items-center justify-center bg-[var(--color-charcoal)] text-white shadow-2xl transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
       >
         <span className="text-[0.6875rem] font-bold tracking-[0.2em] uppercase [writing-mode:vertical-rl] rotate-180">
           {activeDrawer === 'menu' ? 'Close' : 'Menu'}
         </span>
 
         {/* 9TO5STUDIO SIGNATURE YELLOW ACTIVE / HOVER INDICATOR DOT */}
-        <div className={`absolute bottom-8 size-2.5 rounded-full bg-[#FEDD30] transition-all duration-300 ${
+        <div className={`absolute bottom-8 size-2.5 rounded-full bg-[var(--color-yellow)] transition-all duration-300 ${
           activeDrawer === 'menu' ? 'opacity-100 scale-125' : 'opacity-0 group-hover:opacity-100 group-hover:scale-110'
         }`} />
       </button>
@@ -102,23 +130,28 @@ export function HorizontalTrack({ children }: HorizontalTrackProps) {
         id="site-contacts-button"
         onClick={toggleContacts}
         aria-label="Toggle Contacts Drawer"
-        className="group fixed inset-y-0 right-0 z-50 flex w-14 hover:w-20 flex-col items-center justify-center bg-[#111111] text-white shadow-2xl transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
+        className="group fixed inset-y-0 right-0 z-50 flex w-[var(--spacing-rail)] hover:w-20 flex-col items-center justify-center bg-[var(--color-charcoal)] text-white shadow-2xl transition-all duration-300 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
       >
         <span className="text-[0.6875rem] font-bold tracking-[0.2em] uppercase [writing-mode:vertical-rl] rotate-180">
           {activeDrawer === 'contacts' ? 'Close' : 'Contacts'}
         </span>
 
         {/* 9TO5STUDIO SIGNATURE YELLOW ACTIVE / HOVER INDICATOR DOT */}
-        <div className={`absolute bottom-8 size-2.5 rounded-full bg-[#FEDD30] transition-all duration-300 ${
+        <div className={`absolute bottom-8 size-2.5 rounded-full bg-[var(--color-yellow)] transition-all duration-300 ${
           activeDrawer === 'contacts' ? 'opacity-100 scale-125' : 'opacity-0 group-hover:opacity-100 group-hover:scale-110'
         }`} />
       </button>
 
+      {/* GLOBAL FIXED BOTTOM-CENTER PANEL COUNTER */}
+      <div className="fixed bottom-4 left-1/2 -translate-x-1/2 z-40 pointer-events-none text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-charcoal)] font-mono">
+        [<span ref={indexRef}>01</span> / {String(panelCount).padStart(2, '0')}]
+      </div>
+
       {/* FRAMED BOX CONTAINER BOUNDED BETWEEN THE 56PX SIDEBARS */}
-      <div className="w-[calc(100vw-112px)] mx-auto border-x border-[var(--color-charcoal)]/15">
+      <div className="w-[calc(100vw-(var(--spacing-rail)*2))] mx-auto border-x border-[var(--color-charcoal)]/15">
         <div
           ref={innerRef}
-          className="flex h-screen w-max flex-nowrap will-change-transform"
+          className="flex h-[100dvh] w-max flex-nowrap will-change-transform"
         >
           {children}
         </div>

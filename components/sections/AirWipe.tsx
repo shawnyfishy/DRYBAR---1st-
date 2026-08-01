@@ -66,14 +66,13 @@ export function AirWipe() {
   return (
     <div
       ref={containerRef}
-      className="relative flex min-h-[100dvh] w-full md:w-[100vw] md:flex-shrink-0 flex-col justify-between overflow-hidden [background-image:var(--backgroundImage-grad-asagiri)] pt-20 pb-8 px-4 sm:px-6 md:px-12 lg:px-20 md:pt-24 md:pb-12 text-center"
+      className="relative flex min-h-[100dvh] w-full md:w-[calc(100vw-(var(--spacing-rail)*2))] md:flex-shrink-0 flex-col justify-between overflow-hidden [background-image:var(--backgroundImage-grad-asagiri)] pt-20 pb-8 px-4 sm:px-6 md:px-12 lg:px-20 md:pt-24 md:pb-12 text-center"
     >
       {/* SWEEP OVERLAY ON --GRAD-YUZU */}
       <div className="airwipe-sweep absolute inset-0 [background-image:var(--backgroundImage-grad-yuzu)]" />
 
       {/* TOP TRACKING HEADER */}
-      <div className="airwipe-tracker relative z-10 flex w-full items-center justify-between text-[0.6875rem] font-bold tracking-[0.2em] uppercase text-[var(--color-charcoal)]">
-        <span className="font-mono text-[var(--color-charcoal)]/70">[02 / 05]</span>
+      <div className="airwipe-tracker relative z-10 flex w-full items-center justify-end text-[0.6875rem] font-bold tracking-[0.2em] uppercase text-[var(--color-charcoal)]">
         <span className="hidden sm:inline">GEWAN ISLAND</span>
       </div>
 

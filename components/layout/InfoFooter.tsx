@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { useTranslations } from 'next-intl';
+import { isPlaceholder } from '@/lib/content';
 
 export function InfoFooter() {
   const t = useTranslations('footer');
@@ -84,7 +85,9 @@ export function InfoFooter() {
               {t('policyTitle')}
             </h4>
             <p className="text-xs leading-relaxed text-[var(--color-warmgrey)] border-l-2 border-[var(--color-yellow)] pl-3">
-              {t('policyText')}
+              {isPlaceholder(t('policyText'))
+                ? 'Booking and cancellation terms are confirmed at the time you book a chair. Message us on WhatsApp if you need to change your visit.'
+                : t('policyText')}
             </p>
           </div>
         </div>

@@ -8,6 +8,8 @@ import { StylesStrip } from '@/components/sections/StylesStrip';
 import { InfoFooter } from '@/components/layout/InfoFooter';
 import { HorizontalTrack } from '@/components/motion/HorizontalTrack';
 
+export const dynamic = 'force-static';
+
 export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col bg-[var(--color-cream)] overflow-x-hidden">

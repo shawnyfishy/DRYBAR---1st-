@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Placeholder } from '@/components/ui/Placeholder';
 import { getCtaDestination, trackCtaClick } from '@/lib/zenoti';
 import { useTranslations } from 'next-intl';
 import { Reveal } from '@/components/motion/Reveal';
@@ -52,7 +51,7 @@ export function CtaIndex() {
   };
 
   return (
-    <section className="flex min-h-fit w-full md:w-[100vw] md:flex-shrink-0 flex-col justify-center bg-[var(--color-cream)] py-12 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-b border-[var(--color-warmgrey)]/20 overflow-hidden">
+    <section className="flex min-h-fit w-full md:w-[calc(100vw-(var(--spacing-rail)*2))] md:flex-shrink-0 flex-col justify-center bg-[var(--color-cream)] py-12 px-4 sm:px-6 md:px-12 lg:px-20 border-t border-b border-[var(--color-warmgrey)]/20 overflow-hidden">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col justify-between gap-4 sm:gap-6">
         {rows.map((row, idx) => {
           const isHovered = hoveredId === row.id;

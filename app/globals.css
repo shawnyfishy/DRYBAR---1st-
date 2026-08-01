@@ -20,7 +20,8 @@
   --backgroundImage-grad-hai: linear-gradient(180deg, #FCF9F2 0%, #EFE9DC 58%, #DCD5C7 100%);
 
   /* Typography */
-  --font-latin: "Helvetica Now Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Web-licensed Helvetica Now Display can replace this stack later behind this same variable once the client confirms a Monotype web license, with zero other code changes required (docs/open-questions.md line 71). */
+  --font-latin: "Helvetica Now Display", "Helvetica Neue", Helvetica, var(--font-inter-tight-fallback), Arial, sans-serif;
   --font-arabic: "IBM Plex Sans Arabic", "Noto Kufi Arabic", var(--font-latin);
 
   /* Type Scale Tokens */
@@ -53,6 +54,7 @@
   --text-price--font-weight: 500;
 
   /* Spacing Scale */
+  --spacing-rail: 56px;
   --spacing-1: 0.25rem;  /* 4px */
   --spacing-2: 0.5rem;   /* 8px */
   --spacing-3: 0.75rem;  /* 12px */

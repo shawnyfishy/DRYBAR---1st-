@@ -83,6 +83,9 @@ To swap a `<Placeholder>` component for a real image:
    - `4:5` (Editorial Stills / Memberships)
    - `1:1` (Detail Crops)
 
+### Source Images & Large Asset Storage
+High-resolution source JPGs live in the local `pictures/` directory (untracked in git to optimize repository clone speed and Vercel deployment payload size). Production uses the 25 pre-processed, optimized WebP files in `public/images/`. Run `node scripts/process-images.js` to re-generate WebP assets if source JPGs in `pictures/` are updated.
+
 ---
 
 ## 7. Price Updates

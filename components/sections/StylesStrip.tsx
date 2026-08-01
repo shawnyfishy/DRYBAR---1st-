@@ -12,7 +12,7 @@ export function StylesStrip() {
   const services = getServicesData();
 
   return (
-    <section className="flex min-h-screen w-full md:w-[100vw] md:flex-shrink-0 items-center justify-center [background-image:var(--backgroundImage-grad-asagiri)] py-16 px-4 sm:px-6 md:px-12 lg:px-20 md:py-24 overflow-hidden">
+    <section className="flex min-h-screen w-full md:w-[calc(100vw-(var(--spacing-rail)*2))] md:flex-shrink-0 items-center justify-center [background-image:var(--backgroundImage-grad-asagiri)] py-16 px-4 sm:px-6 md:px-12 lg:px-20 md:py-24 overflow-hidden">
       <div className="mx-auto flex w-full max-w-[1440px] flex-col gap-8">
         <div>
           <SplitLines

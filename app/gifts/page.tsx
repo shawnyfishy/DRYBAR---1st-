@@ -2,9 +2,10 @@ import React from 'react';
 import { Header } from '@/components/layout/Header';
 import { InfoFooter } from '@/components/layout/InfoFooter';
 import { CtaRow } from '@/components/ui/CtaRow';
-import { Placeholder } from '@/components/ui/Placeholder';
 import { getServicesData } from '@/lib/services';
 import { Reveal } from '@/components/motion/Reveal';
+
+export const dynamic = 'force-static';
 
 export default function GiftsPage() {
   const services = getServicesData();

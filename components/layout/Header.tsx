@@ -24,7 +24,7 @@ export function Header() {
         <button
           onClick={toggleMenu}
           aria-label="Toggle Navigation Menu"
-          className="flex h-9 items-center justify-center rounded-full bg-[#111111] px-3.5 text-[0.6875rem] font-bold tracking-[0.15em] uppercase text-white shadow-lg transition-transform active:scale-95 cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
+          className="flex h-9 items-center justify-center rounded-full bg-[var(--color-charcoal)] px-3.5 text-[0.6875rem] font-bold tracking-[0.15em] uppercase text-white shadow-lg transition-transform active:scale-95 cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
         >
           {activeDrawer === 'menu' ? t('close') : t('menu')}
         </button>
