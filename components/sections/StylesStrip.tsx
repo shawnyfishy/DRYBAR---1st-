@@ -7,6 +7,13 @@ import { Parallax } from '@/components/motion/Parallax';
 import { getServicesData } from '@/lib/services';
 import { useTranslations } from 'next-intl';
 
+const HAIRSTYLE_IMAGES: Record<string, string> = {
+  blow_dry: '/images/hairstyles-blowdry.webp',
+  beach_waves: '/images/hairstyles-beach-waves.webp',
+  hollywood_waves: '/images/hairstyles-hollywood-waves.webp',
+  retro_waves: '/images/hairstyles-retro-waves.webp',
+};
+
 export function StylesStrip() {
   const t = useTranslations('stylesStrip');
   const services = getServicesData();
@@ -31,7 +38,7 @@ export function StylesStrip() {
         {/* CARDS: HORIZONTAL SCROLL CAROUSEL */}
         <div className="flex w-full snap-x snap-mandatory gap-4 sm:gap-6 overflow-x-auto pb-6 md:grid md:grid-cols-3 lg:grid-cols-4 md:overflow-visible">
           {services.hairStyling.slice(0, 4).map((style, idx) => {
-            const imageSrc = `/images/${6 + idx}.webp`;
+            const imageSrc = HAIRSTYLE_IMAGES[style.id] || `/images/${6 + idx}.webp`;
 
             return (
               <Reveal key={style.id} delay={idx * 0.05}>
