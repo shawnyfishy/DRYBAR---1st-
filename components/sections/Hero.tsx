@@ -151,10 +151,10 @@ export function Hero() {
         { opacity: 1, y: 0, duration: 0.5, stagger: 0.06, ease: EASE.out },
         0.15
       )
-      // t=0.30: Display lines mask-reveal yPercent 110 to 0, 1.0s, EASE.out, stagger 0.08
+      // t=0.30: Display lines mask-reveal yPercent 135 to 0, 1.0s, EASE.out, stagger 0.08
       .fromTo(
         displaySpans,
-        { yPercent: 110 },
+        { yPercent: 135 },
         { yPercent: 0, duration: 1.0, stagger: 0.08, ease: EASE.out },
         0.30
       )
@@ -248,17 +248,17 @@ export function Hero() {
           aria-hidden="true"
           className="z-10 w-full md:w-2/3 lg:w-7/12 flex flex-col text-[clamp(2.5rem,13vw,4rem)] md:text-[clamp(3.5rem,11vw,9.5rem)] font-bold leading-[0.86] tracking-[-0.04em] text-[var(--color-charcoal)] select-none"
         >
-          <div className="overflow-hidden py-1">
+          <div className="overflow-hidden pb-[0.25em] -mb-[0.25em]">
             <span className="hero-display-span block will-change-transform">
               {t('displayLine1')}
             </span>
           </div>
-          <div className="overflow-hidden py-1">
+          <div className="overflow-hidden pb-[0.25em] -mb-[0.25em]">
             <span className="hero-display-span block will-change-transform">
               {t('displayLine2')}
             </span>
           </div>
-          <div className="overflow-hidden py-1">
+          <div className="overflow-hidden pb-[0.25em] -mb-[0.25em]">
             <span className="hero-display-span block will-change-transform">
               {t('displayLine3')}
             </span>

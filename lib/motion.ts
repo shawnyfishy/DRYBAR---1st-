@@ -69,9 +69,6 @@ export function registerGsapPlugins() {
     CustomEase.create('circ3', 'M0,0 C0.19,1 0.22,1 1,1');
     // cubic-bezier(.56,0,.05,1) — smooth in-out for continuous/scrub motion.
     CustomEase.create('butter', 'M0,0 C0.56,0 0.05,1 1,1');
-    // legacy alias kept so existing ease:'airWipe' call sites inherit the
-    // corrected curve without needing every call site touched in this pass.
-    CustomEase.create('airWipe', 'M0,0 C0.83,0 0.17,1 1,1');
 
     pluginsRegistered = true;
   }

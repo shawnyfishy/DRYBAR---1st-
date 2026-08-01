@@ -23,7 +23,7 @@ export function SplitLines({ children, granularity = 'word', className = '' }: S
 
     gsap.fromTo(
       units,
-      { yPercent: 100, opacity: 0 },
+      { yPercent: 135, opacity: 0 },
       {
         yPercent: 0,
         opacity: 1,
@@ -59,9 +59,9 @@ export function SplitLines({ children, granularity = 'word', className = '' }: S
   const words = children.split(' ');
 
   return (
-    <div ref={containerRef} className={`overflow-hidden ${className}`}>
+    <div ref={containerRef} className={`${className}`}>
       {words.map((word, idx) => (
-        <span key={idx} className="inline-block overflow-hidden mr-[0.25em] align-top">
+        <span key={idx} className="inline-block overflow-hidden pb-[0.25em] -mb-[0.25em] mr-[0.25em] align-top">
           <span className="split-unit inline-block will-change-transform">
             {word}
           </span>
@@ -70,3 +70,4 @@ export function SplitLines({ children, granularity = 'word', className = '' }: S
     </div>
   );
 }
+

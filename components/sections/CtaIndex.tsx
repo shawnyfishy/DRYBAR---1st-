@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { getCtaDestination, trackCtaClick } from '@/lib/zenoti';
 import { useTranslations } from 'next-intl';
 import { Reveal } from '@/components/motion/Reveal';
+import { TransitionLink } from '@/components/motion/RouteTransition';
 
 export function CtaIndex() {
   const t = useTranslations('ctaIndex');
@@ -56,48 +57,70 @@ export function CtaIndex() {
         {rows.map((row, idx) => {
           const isHovered = hoveredId === row.id;
           const isDimmed = hoveredId !== null && !isHovered;
+          const isExternal = row.target === '_blank' || row.href.startsWith('http');
+
+          const rowContent = (
+            <>
+              {/* CURSOR-FOLLOWING HOVER CARD THUMBNAIL */}
+              <div
+                className={`pointer-events-none absolute z-20 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-2xl overflow-hidden transition-all duration-300 ease-out hidden lg:block
+                  ${isHovered ? 'scale-100 opacity-90' : 'scale-95 opacity-0'}
+                `}
+                style={{
+                  left: `${cursorPos.x}px`,
+                  top: `${cursorPos.y}px`,
+                }}
+              >
+                <img src={row.imageSrc} alt={row.label} className="h-full w-full object-cover border-2 border-[var(--color-charcoal)] rounded-lg" />
+              </div>
+
+              {/* ROW LABEL */}
+              <span className="z-10 text-start text-[clamp(1.5rem,5vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)] transition-transform duration-300 group-hover:translate-x-3 rtl:group-hover:-translate-x-3">
+                {row.label}
+              </span>
+
+              {/* ARROW INDICATOR */}
+              <span className="z-10 text-2xl text-[var(--color-warmgrey)] transition-all duration-300 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 group-hover:text-[var(--color-charcoal)] rtl:rotate-180" aria-hidden="true">
+                →
+              </span>
+            </>
+          );
+
+          const rowClassName = `group relative flex min-h-[72px] sm:min-h-[88px] w-full items-center justify-between overflow-hidden rounded-xl border border-[var(--color-warmgrey)]/20 p-4 sm:p-6 
+            transition-all duration-300 ease-[cubic-bezier(0.33,1,0.68,1)]
+            active:scale-[0.985] active:transition-transform active:duration-100
+            focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]
+            ${isHovered ? '[background-image:var(--backgroundImage-grad-yuzu)] border-[var(--color-yellow)]' : 'bg-white'}
+            ${isDimmed ? 'opacity-40' : 'opacity-100'}
+          `;
 
           return (
             <Reveal key={row.id} delay={idx * 0.10}>
-              <a
-                href={row.href}
-                target={row.target}
-                rel="noopener"
-                onClick={row.onClick}
-                onMouseEnter={() => setHoveredId(row.id)}
-                onMouseLeave={() => setHoveredId(null)}
-                onMouseMove={handleMouseMove}
-                className={`group relative flex min-h-[72px] sm:min-h-[88px] w-full items-center justify-between overflow-hidden rounded-xl border border-[var(--color-warmgrey)]/20 p-4 sm:p-6 
-                  transition-all duration-300 ease-[cubic-bezier(0.33,1,0.68,1)]
-                  active:scale-[0.985] active:transition-transform active:duration-100
-                  focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]
-                  ${isHovered ? '[background-image:var(--backgroundImage-grad-yuzu)] border-[var(--color-yellow)]' : 'bg-white'}
-                  ${isDimmed ? 'opacity-40' : 'opacity-100'}
-                `}
-              >
-                {/* CURSOR-FOLLOWING HOVER CARD THUMBNAIL (MATCHING REFERENCE SITE 9to5studio PROJECT HOVER) */}
-                <div
-                  className={`pointer-events-none absolute z-20 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-lg shadow-2xl overflow-hidden transition-all duration-300 ease-out hidden lg:block
-                    ${isHovered ? 'scale-100 opacity-90' : 'scale-95 opacity-0'}
-                  `}
-                  style={{
-                    left: `${cursorPos.x}px`,
-                    top: `${cursorPos.y}px`,
-                  }}
+              {isExternal ? (
+                <a
+                  href={row.href}
+                  target={row.target}
+                  rel="noopener"
+                  onClick={row.onClick}
+                  onMouseEnter={() => setHoveredId(row.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onMouseMove={handleMouseMove}
+                  className={rowClassName}
                 >
-                  <img src={row.imageSrc} alt={row.label} className="h-full w-full object-cover border-2 border-[var(--color-charcoal)] rounded-lg" />
-                </div>
-
-                {/* ROW LABEL */}
-                <span className="z-10 text-start text-[clamp(1.5rem,5vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)] transition-transform duration-300 group-hover:translate-x-3 rtl:group-hover:-translate-x-3">
-                  {row.label}
-                </span>
-
-                {/* ARROW INDICATOR */}
-                <span className="z-10 text-2xl text-[var(--color-warmgrey)] transition-all duration-300 group-hover:translate-x-2 rtl:group-hover:-translate-x-2 group-hover:text-[var(--color-charcoal)] rtl:rotate-180" aria-hidden="true">
-                  →
-                </span>
-              </a>
+                  {rowContent}
+                </a>
+              ) : (
+                <TransitionLink
+                  href={row.href}
+                  onClick={row.onClick}
+                  onMouseEnter={() => setHoveredId(row.id)}
+                  onMouseLeave={() => setHoveredId(null)}
+                  onMouseMove={handleMouseMove}
+                  className={rowClassName}
+                >
+                  {rowContent}
+                </TransitionLink>
+              )}
             </Reveal>
           );
         })}

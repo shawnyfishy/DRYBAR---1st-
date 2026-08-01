@@ -1,7 +1,6 @@
 import React from 'react';
 import { Header } from '@/components/layout/Header';
 import { Hero } from '@/components/sections/Hero';
-import { AirWipe } from '@/components/sections/AirWipe';
 import { TheOneThing } from '@/components/sections/TheOneThing';
 import { CtaIndex } from '@/components/sections/CtaIndex';
 import { StylesStrip } from '@/components/sections/StylesStrip';
@@ -17,7 +16,6 @@ export default function HomePage() {
       <main className="flex-1">
         <HorizontalTrack>
           <Hero />
-          <AirWipe />
           <TheOneThing />
           <CtaIndex />
           <StylesStrip />
@@ -27,3 +25,4 @@ export default function HomePage() {
     </div>
   );
 }
+

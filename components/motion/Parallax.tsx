@@ -46,7 +46,7 @@ export function Parallax({ children, className = '', speed = 1.0 }: ParallaxProp
         ease: 'none',
         scrollTrigger: containerAnimation
           ? {
-              // Same fix as Reveal/AirWipe: inside HorizontalTrack the
+              // Same fix as Reveal: inside HorizontalTrack the
               // element's vertical position never changes, so a 'top
               // bottom'/'bottom top' scrub against the real (vertical)
               // scroller would compute a fixed, frozen progress value

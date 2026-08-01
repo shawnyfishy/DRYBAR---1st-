@@ -15,7 +15,9 @@ export function Preloader() {
     registerGsapPlugins();
 
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
+    const hasSeenIntro = typeof window !== 'undefined' && sessionStorage.getItem('db:intro') === 'true';
+
+    if (prefersReducedMotion || hasSeenIntro) {
       // Hero (and anything else) waits for this event before animating in —
       // fire it immediately so content just appears, no motion, no stall.
       window.dispatchEvent(new Event(PRELOADER_REVEAL_EVENT));
@@ -26,6 +28,9 @@ export function Preloader() {
     const tl = gsap.timeline({
       defaults: { ease: EASE.out },
       onComplete: () => {
+        // Set intro key for this session
+        sessionStorage.setItem('db:intro', 'true');
+
         // Fired at the exact moment the curtain starts lifting — not after
         // it's gone. Hero's own entrance listens for this and plays
         // underneath as the preloader exits, so the two overlap into one
@@ -51,7 +56,7 @@ export function Preloader() {
       // Tagline reveals word by word, each rising out of its own mask.
       .fromTo(
         '.preloader-tagline-word',
-        { yPercent: 100, opacity: 0 },
+        { yPercent: 135, opacity: 0 },
         { yPercent: 0, opacity: 1, duration: DUR.reveal, ease: EASE.soft, stagger: 0.06 },
         '-=0.8'
       )
@@ -94,7 +99,7 @@ export function Preloader() {
 
         <p className="mt-6 text-xs tracking-[0.25em] uppercase text-[var(--color-charcoal)]/70">
           {words.map((word, idx) => (
-            <span key={idx} className="inline-block overflow-hidden mr-[0.4em] align-top">
+            <span key={idx} className="inline-block overflow-hidden pb-[0.25em] -mb-[0.25em] mr-[0.4em] align-top">
               <span className="preloader-tagline-word inline-block will-change-transform opacity-0">
                 {word}
               </span>

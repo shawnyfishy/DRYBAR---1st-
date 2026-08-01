@@ -8,6 +8,7 @@ import { Preloader } from '@/components/layout/Preloader';
 import { MenuProvider } from '@/components/layout/MenuProvider';
 import { OverlayMenu } from '@/components/layout/OverlayMenu';
 import { ContactsDrawer } from '@/components/layout/ContactsDrawer';
+import { RouteTransition } from '@/components/motion/RouteTransition';
 import type { Metadata } from 'next';
 import enMessages from '@/content/en.json';
 
@@ -124,19 +125,21 @@ export default function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <SmoothScrollProvider>
             <MenuProvider>
-              {/* Animated Preloader Curtain Wipe */}
-              <Preloader />
-              {/* Persistent Grain Overlay */}
-              <GrainOverlay />
-              {/* Menu & Contacts drawers live outside #page-content */}
-              <OverlayMenu />
-              <ContactsDrawer />
-              <div
-                id="page-content"
-                className="page-transition-wrapper min-h-screen transition-opacity duration-300"
-              >
-                {children}
-              </div>
+              <RouteTransition>
+                {/* Animated Preloader Curtain Wipe */}
+                <Preloader />
+                {/* Persistent Grain Overlay */}
+                <GrainOverlay />
+                {/* Menu & Contacts drawers live outside #page-content */}
+                <OverlayMenu />
+                <ContactsDrawer />
+                <div
+                  id="page-content"
+                  className="page-transition-wrapper min-h-screen"
+                >
+                  {children}
+                </div>
+              </RouteTransition>
             </MenuProvider>
           </SmoothScrollProvider>
         </NextIntlClientProvider>

@@ -7,6 +7,7 @@ import { gsap } from 'gsap';
 import { EASE, DUR } from '@/lib/motion';
 import { Logo } from '@/components/ui/Logo';
 import { useMenu } from './MenuProvider';
+import { TransitionLink } from '@/components/motion/RouteTransition';
 
 export function OverlayMenu() {
   const { activeDrawer, close } = useMenu();
@@ -117,24 +118,24 @@ export function OverlayMenu() {
               Navigation
             </span>
             <nav className="flex flex-col gap-3 font-normal text-[clamp(1.5rem,5vw,2.25rem)] leading-none tracking-[-0.02em]">
-              <a
+              <TransitionLink
                 href="/"
                 className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
                 <span className="text-[var(--color-yellow)]">•</span> {t('home')}
-              </a>
-              <a
+              </TransitionLink>
+              <TransitionLink
                 href="/prices"
                 className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
                 {t('prices')}
-              </a>
-              <a
+              </TransitionLink>
+              <TransitionLink
                 href="/gifts"
                 className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
                 {t('gifts')}
-              </a>
+              </TransitionLink>
             </nav>
           </div>
 
