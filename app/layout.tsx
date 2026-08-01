@@ -115,6 +115,10 @@ export default function RootLayout({
         {/* Preconnect to Zenoti host to prevent DNS lookup stalls on booking redirect */}
         <link rel="preconnect" href={zenotiHost} crossOrigin="anonymous" />
         <link rel="dns-prefetch" href={zenotiHost} />
+        {/* Hero video poster — LCP-critical, must paint instantly. The video
+            files themselves are intentionally NOT preloaded here so they
+            don't compete with fonts/LCP image for first-load bandwidth. */}
+        <link rel="preload" as="image" href="/video/hero-loop-poster.webp" type="image/webp" />
         {/* JSON-LD LocalBusiness Structured Data */}
         <script
           type="application/ld+json"
