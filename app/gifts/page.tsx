@@ -87,7 +87,12 @@ export default function GiftsPage() {
                   </div>
 
                   <div className="mt-8">
-                    <CtaRow label="Inquire via WhatsApp" destination="whatsapp" campaign="membership_inquire" />
+                    <CtaRow
+                      label="Inquire via WhatsApp"
+                      destination="whatsapp"
+                      campaign="membership_inquire"
+                      whatsappIntent={{ kind: 'membership', plan: item.sessions_label_en }}
+                    />
                   </div>
                 </div>
               );
@@ -106,7 +111,12 @@ export default function GiftsPage() {
             </p>
           </div>
           <div className="flex justify-start">
-            <CtaRow label="Inquire About Gift Cards" destination="whatsapp" campaign="gift_card_inquire" />
+            <CtaRow
+              label="Inquire About Gift Cards"
+              destination="whatsapp"
+              campaign="gift_card_inquire"
+              whatsappIntent={{ kind: 'gift_card' }}
+            />
           </div>
         </Reveal>
 
@@ -131,6 +141,7 @@ export default function GiftsPage() {
               label="Ask About Founding Membership"
               destination="whatsapp"
               campaign="founding_membership_inquire"
+              whatsappIntent={{ kind: 'membership', plan: 'Founding Barfly' }}
             />
           </div>
         </Reveal>

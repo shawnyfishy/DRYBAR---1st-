@@ -3,6 +3,7 @@
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import { isPlaceholder } from '@/lib/content';
+import { whatsappHref } from '@/lib/whatsapp';
 
 export function InfoFooter() {
   const t = useTranslations('footer');
@@ -55,7 +56,7 @@ export function InfoFooter() {
             </h4>
             <div className="flex flex-col gap-2">
               <a
-                href="https://wa.me/97477730600"
+                href={whatsappHref({ kind: 'general' })}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[clamp(1rem,3.5vw,1.125rem)] font-normal text-[var(--color-cream)] hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)]"

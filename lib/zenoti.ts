@@ -1,15 +1,18 @@
 /**
  * Zenoti & CTA Integration Builder
- * 
+ *
  * RATIONALE (Brand Kit Page 11):
- * Brand Kit page 11 instructs that people are NEVER sent to a website or map pin 
- * that is not live. A 404 or dead link on the booking button is the single worst 
+ * Brand Kit page 11 instructs that people are NEVER sent to a website or map pin
+ * that is not live. A 404 or dead link on the booking button is the single worst
  * failure this site can produce.
- * 
- * If a Zenoti environment variable is missing, empty, or invalid at runtime/build-time, 
- * the booking CTA gracefully falls back to the official WhatsApp contact (+974 7773 0600) 
+ *
+ * If a Zenoti environment variable is missing, empty, or invalid at runtime/build-time,
+ * the booking CTA gracefully falls back to a pre-filled WhatsApp message (see
+ * lib/whatsapp.ts, the single source of truth for the number and every message)
  * so guests can book by message cleanly.
  */
+
+import { whatsappHref } from './whatsapp';
 
 export type CtaDestination = 'book' | 'manage' | 'whatsapp';
 
@@ -19,8 +22,6 @@ export interface CtaLinkResult {
   labelEn: string;
   target: '_self' | '_blank';
 }
-
-const DEFAULT_WHATSAPP_URL = 'https://wa.me/97477730600';
 
 function isValidHttpsUrl(urlStr: string | undefined): boolean {
   if (!urlStr || typeof urlStr !== 'string' || !urlStr.trim()) return false;
@@ -38,7 +39,6 @@ function isValidHttpsUrl(urlStr: string | undefined): boolean {
 export function getCtaDestination(destination: CtaDestination, campaign: string = 'book_now'): CtaLinkResult {
   const bookEnv = process.env.NEXT_PUBLIC_ZENOTI_BOOK_URL;
   const manageEnv = process.env.NEXT_PUBLIC_ZENOTI_MANAGE_URL;
-  const whatsappEnv = process.env.NEXT_PUBLIC_WHATSAPP_URL || DEFAULT_WHATSAPP_URL;
 
   // Build-time & Runtime validation
   if (destination === 'book') {
@@ -48,12 +48,8 @@ export function getCtaDestination(destination: CtaDestination, campaign: string 
           `[Zenoti CTA Warning]: NEXT_PUBLIC_ZENOTI_BOOK_URL is missing or invalid. Falling back to WhatsApp booking.`
         );
       }
-      const fallbackUrl = new URL(whatsappEnv);
-      fallbackUrl.searchParams.set('utm_source', 'website');
-      fallbackUrl.searchParams.set('utm_medium', 'cta');
-      fallbackUrl.searchParams.set('utm_campaign', campaign);
       return {
-        href: fallbackUrl.toString(),
+        href: whatsappHref({ kind: 'booking' }),
         isFallback: true,
         labelEn: 'Book via WhatsApp',
         target: '_blank', // WhatsApp opens in new tab
@@ -80,7 +76,7 @@ export function getCtaDestination(destination: CtaDestination, campaign: string 
         );
       }
       return {
-        href: whatsappEnv,
+        href: whatsappHref({ kind: 'reschedule' }),
         isFallback: true,
         labelEn: 'Reschedule via WhatsApp',
         target: '_blank',
@@ -101,7 +97,7 @@ export function getCtaDestination(destination: CtaDestination, campaign: string 
 
   // Default WhatsApp link
   return {
-    href: whatsappEnv,
+    href: whatsappHref({ kind: 'general' }),
     isFallback: true,
     labelEn: 'Message on WhatsApp',
     target: '_blank',

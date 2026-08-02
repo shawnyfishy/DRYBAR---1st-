@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { getServicesData } from '@/lib/services';
+import { whatsappHref } from '@/lib/whatsapp';
 
 export function PriceTable() {
   const services = getServicesData();
@@ -58,6 +59,16 @@ export function PriceTable() {
                 </span>
               </div>
             </div>
+
+            <a
+              href={whatsappHref({ kind: 'booking_service', service: item.name_en })}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-1 inline-flex items-center gap-1 border-t border-[var(--color-warmgrey)]/15 pt-3 text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-[var(--color-charcoal)] hover:text-[var(--color-warmgrey)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
+            >
+              Book via WhatsApp
+              <span aria-hidden="true">→</span>
+            </a>
           </div>
         ))}
       </div>
@@ -73,6 +84,9 @@ export function PriceTable() {
                   {tier.index} {tier.label_en}
                 </th>
               ))}
+              <th className="py-3 px-4 text-end">
+                <span className="sr-only">Book</span>
+              </th>
             </tr>
           </thead>
           <tbody className="divide-y divide-[var(--color-warmgrey)]/10 text-sm">
@@ -83,6 +97,17 @@ export function PriceTable() {
                 <td className="py-4 px-4 text-end tabular-nums text-[var(--color-charcoal)]" dir="ltr">QAR {item.prices.medium}</td>
                 <td className="py-4 px-4 text-end tabular-nums text-[var(--color-charcoal)]" dir="ltr">QAR {item.prices.long}</td>
                 <td className="py-4 px-4 text-end tabular-nums text-[var(--color-charcoal)]" dir="ltr">QAR {item.prices.extra_long}</td>
+                <td className="py-4 px-4 text-end">
+                  <a
+                    href={whatsappHref({ kind: 'booking_service', service: item.name_en })}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[0.6875rem] font-bold tracking-[0.1em] uppercase text-[var(--color-charcoal)] hover:text-[var(--color-warmgrey)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
+                  >
+                    Book
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </td>
               </tr>
             ))}
           </tbody>

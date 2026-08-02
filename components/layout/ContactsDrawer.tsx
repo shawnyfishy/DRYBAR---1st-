@@ -4,6 +4,7 @@ import React, { useRef } from 'react';
 import { useMenu } from './MenuProvider';
 import { gsap } from 'gsap';
 import { useGsap } from '@/components/motion/useGsap';
+import { whatsappHref } from '@/lib/whatsapp';
 
 export function ContactsDrawer() {
   const { activeDrawer, close } = useMenu();
@@ -96,7 +97,7 @@ export function ContactsDrawer() {
               BOOKING & ENQUIRIES
             </h3>
             <a
-              href="https://wa.me/97477730600"
+              href={whatsappHref({ kind: 'general' })}
               target="_blank"
               rel="noopener noreferrer"
               className="text-[clamp(1.125rem,2.5vw,1.75rem)] font-normal text-[var(--color-yellow)] hover:underline block"
@@ -133,7 +134,7 @@ export function ContactsDrawer() {
         {/* FOOTER CALL TO ACTION */}
         <div className="contact-item pt-6 border-t border-[var(--color-cream)]/15">
           <a
-            href="https://wa.me/97477730600"
+            href={whatsappHref({ kind: 'booking' })}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-between rounded-full bg-[var(--color-yellow)] px-8 py-4 text-center font-bold tracking-[0.15em] text-[var(--color-charcoal)] transition-transform hover:scale-[1.02]"

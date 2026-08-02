@@ -2,15 +2,27 @@
 
 import React from 'react';
 import { getCtaDestination, trackCtaClick } from '@/lib/zenoti';
+import { whatsappHref, type WhatsAppIntent } from '@/lib/whatsapp';
 
 interface CtaRowProps {
   label?: string;
   destination?: 'book' | 'manage' | 'whatsapp';
   campaign?: string;
+  // Only used when destination="whatsapp" — picks which pre-filled message
+  // this specific CTA sends. Defaults to a generic enquiry if omitted.
+  whatsappIntent?: WhatsAppIntent;
 }
 
-export function CtaRow({ label, destination = 'book', campaign = 'book_now' }: CtaRowProps) {
-  const cta = getCtaDestination(destination, campaign);
+export function CtaRow({ label, destination = 'book', campaign = 'book_now', whatsappIntent }: CtaRowProps) {
+  const cta =
+    destination === 'whatsapp'
+      ? {
+          href: whatsappHref(whatsappIntent ?? { kind: 'general' }),
+          isFallback: true,
+          labelEn: 'Message on WhatsApp',
+          target: '_blank' as const,
+        }
+      : getCtaDestination(destination, campaign);
   const displayLabel = label || cta.labelEn;
 
   const handleClick = () => {
