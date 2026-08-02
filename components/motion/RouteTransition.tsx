@@ -205,10 +205,22 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
       setTimeout(() => ScrollTrigger.refresh(), 50);
 
       if (isViaNavigate && overlay && logo) {
+        // Release the touch/click lock the instant the incoming page is
+        // mounted, not when the curtain finishes visually sweeping away.
+        // clip-path already correctly restricts hit-testing to whatever
+        // portion of the overlay is still visually covering the screen
+        // (confirmed by measurement — a still-clipped region blocks touch,
+        // an already-uncovered one doesn't), so pointerEvents has no visual
+        // job left to do here: leaving it 'auto' for the full 0.75s reveal
+        // only cost mobile guests a scroll-dead window after landing,
+        // since touch scrolling requires hit-testing the touched point and
+        // there was nothing left for that lock to protect once the new
+        // page existed underneath.
+        gsap.set(overlay, { pointerEvents: 'none' });
+
         // REVEAL & ENTER
         const revealTl = gsap.timeline({
           onComplete: () => {
-            gsap.set(overlay, { pointerEvents: 'none' });
             isTransitioningRef.current = false;
             setIsTransitioning(false);
             ScrollTrigger.refresh();
@@ -250,7 +262,6 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
 
         const popTl = gsap.timeline({
           onComplete: () => {
-            gsap.set(overlay, { pointerEvents: 'none' });
             isTransitioningRef.current = false;
             setIsTransitioning(false);
             ScrollTrigger.refresh();
@@ -268,6 +279,10 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           .to(overlay, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.4, ease: EASE.inOut })
           .to(logo, { opacity: 1, duration: 0.2 }, 0.15)
           .to(logo, { opacity: 0, duration: 0.15 }, 0.4)
+          // Release the lock the instant the outward reveal sweep begins
+          // (same reasoning as the forward-navigation path above) rather
+          // than waiting for it to finish sweeping away.
+          .set(overlay, { pointerEvents: 'none' }, 0.4)
           .to(overlay, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.5, ease: EASE.inOut }, 0.4);
 
         if (pageContent) {
