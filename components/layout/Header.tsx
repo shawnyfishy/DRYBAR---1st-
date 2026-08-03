@@ -1,6 +1,7 @@
 'use client';
 
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
+
 import gsap from 'gsap';
 import { Logo } from '@/components/ui/Logo';
 import { useMenu } from './MenuProvider';
@@ -10,12 +11,22 @@ import { TransitionLink } from '@/components/motion/RouteTransition';
 export function Header() {
   const { activeDrawer, toggleMenu, toggleContacts } = useMenu();
   const t = useTranslations('nav');
+  const [showDot, setShowDot] = useState(false);
 
   const headerRef = useRef<HTMLElement | null>(null);
   const surfaceRef = useRef<HTMLDivElement | null>(null);
   const isScrolledRef = useRef<boolean>(false);
   const isHiddenRef = useRef<boolean>(false);
   const prevScrollYRef = useRef<number>(0);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const isDismissed = sessionStorage.getItem('db:membership-pill') === 'dismissed';
+      setShowDot(!isDismissed);
+    }
+  }, [activeDrawer]);
+
+
 
   useEffect(() => {
     const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -135,10 +146,17 @@ export function Header() {
         <button
           onClick={toggleMenu}
           aria-label="Toggle Navigation Menu"
-          className="flex h-9 items-center justify-center rounded-full bg-[var(--color-charcoal)] px-3.5 text-[0.6875rem] font-bold tracking-[0.15em] uppercase text-white shadow-lg transition-transform active:scale-95 cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
+          className="flex h-9 items-center justify-center gap-1.5 rounded-full bg-[var(--color-charcoal)] px-3.5 text-[0.6875rem] font-bold tracking-[0.15em] uppercase text-white shadow-lg transition-transform active:scale-95 cursor-pointer focus-visible:outline-2 focus-visible:outline-white"
         >
+          {showDot && (
+            <span
+              aria-hidden="true"
+              className="h-1.5 w-1.5 rounded-full bg-[var(--color-yellow)] shrink-0"
+            />
+          )}
           {activeDrawer === 'menu' ? t('close') : t('menu')}
         </button>
+
 
         <button
           onClick={toggleContacts}

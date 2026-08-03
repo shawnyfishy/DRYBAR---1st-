@@ -14,7 +14,7 @@ export default function GiftsPage() {
   const memberships = services.memberships;
 
   return (
-    <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)] overflow-x-hidden">
+    <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)]">
       <Header />
       <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 py-20 sm:px-6 md:p-12 md:pt-28 gap-10 sm:gap-16">
         {/* TITLE & SUBTITLE */}
@@ -63,8 +63,11 @@ export default function GiftsPage() {
                         alt={`Drybar Membership ${item.sessions} Sessions`}
                         className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                         loading="lazy"
+                        decoding="async"
+                        fetchPriority="low"
                       />
                     </div>
+
 
                     {/* BENEFIT AS ONE LINE BENEATH */}
                     <p className="text-base font-medium leading-snug text-[var(--color-charcoal)]">

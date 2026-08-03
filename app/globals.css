@@ -91,11 +91,21 @@ html {
   background-color: var(--color-cream);
   color: var(--color-charcoal);
   font-family: var(--font-latin);
+  overflow-x: clip;
+}
+
+body {
+  overflow-x: clip;
+}
+
+html, body {
+  overscroll-behavior-y: none;
 }
 
 html[dir="rtl"] {
   font-family: var(--font-arabic);
 }
+
 
 .tabular-nums {
   font-variant-numeric: tabular-nums;

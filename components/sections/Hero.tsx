@@ -343,7 +343,8 @@ export function Hero() {
       </div>
 
       {/* BOTTOM BAND: Solid Brand Yellow Bar with Hairline & Footer */}
-      <div className="relative z-30 w-full bg-[var(--color-yellow)] px-4 pt-3 pb-8 sm:px-6 md:px-12 lg:px-16 md:pt-4 md:pb-10 border-t border-[var(--color-charcoal)]/20">
+      <div id="hero-utility-bar" className="relative z-30 w-full bg-[var(--color-yellow)] px-4 pt-3 pb-8 sm:px-6 md:px-12 lg:px-16 md:pt-4 md:pb-10 border-t border-[var(--color-charcoal)]/20">
+
         <div className="flex w-full flex-col gap-4">
           <div className="hero-bottom-hairline h-[1px] w-full bg-[var(--color-charcoal)] origin-left" />
 

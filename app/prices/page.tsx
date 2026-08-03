@@ -16,8 +16,9 @@ export default function PricesPage() {
   const services = getServicesData();
 
   return (
-    <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)] overflow-x-hidden">
+    <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)]">
       <Header />
+
       <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 py-20 sm:px-6 md:p-12 md:pt-28 gap-8 sm:gap-12">
         {/* PAGE TITLE & DYNAMIC SUMMARY PRICE */}
         <Reveal className="flex flex-col gap-3">

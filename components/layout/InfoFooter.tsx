@@ -15,6 +15,8 @@ export function InfoFooter() {
 
   return (
     <footer className="w-full [background-image:var(--backgroundImage-grad-sumi)] py-16 text-[var(--color-cream)]">
+
+
       <div className="mx-auto flex max-w-[1440px] flex-col gap-12 px-6 md:px-12">
         {/* GRID LAYOUT */}
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">

@@ -8,6 +8,18 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { EASE, registerGsapPlugins } from '@/lib/motion';
 import { Logo } from '@/components/ui/Logo';
 import { useMenu } from '@/components/layout/MenuProvider';
+import { scrollToTop } from '@/lib/scrollLock';
+
+let refreshHandle: number | null = null;
+function scheduleRefresh() {
+  if (refreshHandle !== null) cancelAnimationFrame(refreshHandle);
+  refreshHandle = requestAnimationFrame(() => {
+    refreshHandle = requestAnimationFrame(() => {
+      ScrollTrigger.refresh();
+      refreshHandle = null;
+    });
+  });
+}
 
 interface RouteTransitionContextType {
   navigate: (href: string) => void;
@@ -102,9 +114,7 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           duration: 0.075,
           onComplete: () => {
             router.push(href);
-            const lenis = (window as any).lenisInstance;
-            if (lenis) lenis.scrollTo(0, { immediate: true });
-            else window.scrollTo(0, 0);
+            scrollToTop();
             gsap.to(pageContent, { opacity: 1, duration: 0.075 });
             isTransitioningRef.current = false;
             setIsTransitioning(false);
@@ -138,19 +148,15 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
         // SWAP: hold 0.12s before route push
         setTimeout(() => {
           router.push(href);
-          const lenis = (window as any).lenisInstance;
-          if (lenis) {
-            lenis.scrollTo(0, { immediate: true });
-          } else {
-            window.scrollTo(0, 0);
-          }
-          ScrollTrigger.refresh();
+          scrollToTop();
+          scheduleRefresh();
         }, 120);
       },
     });
 
     gsap.set(overlay, {
       clipPath: 'inset(100% 0% 0% 0%)',
+      willChange: 'clip-path',
       pointerEvents: 'auto',
       opacity: 1,
     });
@@ -196,26 +202,12 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
       const pageContent = document.getElementById('page-content');
 
       // Scroll to top immediately & refresh ScrollTrigger
-      const lenis = (window as any).lenisInstance;
-      if (lenis) {
-        lenis.scrollTo(0, { immediate: true });
-      } else {
-        window.scrollTo(0, 0);
-      }
-      setTimeout(() => ScrollTrigger.refresh(), 50);
+      scrollToTop();
+      scheduleRefresh();
 
       if (isViaNavigate && overlay && logo) {
         // Release the touch/click lock the instant the incoming page is
         // mounted, not when the curtain finishes visually sweeping away.
-        // clip-path already correctly restricts hit-testing to whatever
-        // portion of the overlay is still visually covering the screen
-        // (confirmed by measurement — a still-clipped region blocks touch,
-        // an already-uncovered one doesn't), so pointerEvents has no visual
-        // job left to do here: leaving it 'auto' for the full 0.75s reveal
-        // only cost mobile guests a scroll-dead window after landing,
-        // since touch scrolling requires hit-testing the touched point and
-        // there was nothing left for that lock to protect once the new
-        // page existed underneath.
         gsap.set(overlay, { pointerEvents: 'none' });
 
         // REVEAL & ENTER
@@ -223,7 +215,8 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           onComplete: () => {
             isTransitioningRef.current = false;
             setIsTransitioning(false);
-            ScrollTrigger.refresh();
+            gsap.set(overlay, { willChange: 'auto' });
+            scheduleRefresh();
           },
         });
 
@@ -242,10 +235,6 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           );
 
         // ENTER: incoming #page-content opacity 0 / y 24px to opacity 1 / y 0, 0.6s, EASE.out, starting 0.25s into REVEAL
-        // clearProps drops the inline transform once settled. Even an identity
-        // `transform: translate(0,0)` makes #page-content the containing block
-        // for every `position: fixed` descendant, which silently breaks
-        // ScrollTrigger's pin on the home page and the fixed side rails.
         if (pageContent) {
           revealTl.fromTo(
             pageContent,
@@ -264,12 +253,14 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           onComplete: () => {
             isTransitioningRef.current = false;
             setIsTransitioning(false);
-            ScrollTrigger.refresh();
+            gsap.set(overlay, { willChange: 'auto' });
+            scheduleRefresh();
           },
         });
 
         gsap.set(overlay, {
           clipPath: 'inset(100% 0% 0% 0%)',
+          willChange: 'clip-path',
           pointerEvents: 'auto',
           opacity: 1,
         });
@@ -279,9 +270,6 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
           .to(overlay, { clipPath: 'inset(0% 0% 0% 0%)', duration: 0.4, ease: EASE.inOut })
           .to(logo, { opacity: 1, duration: 0.2 }, 0.15)
           .to(logo, { opacity: 0, duration: 0.15 }, 0.4)
-          // Release the lock the instant the outward reveal sweep begins
-          // (same reasoning as the forward-navigation path above) rather
-          // than waiting for it to finish sweeping away.
           .set(overlay, { pointerEvents: 'none' }, 0.4)
           .to(overlay, { clipPath: 'inset(0% 0% 100% 0%)', duration: 0.5, ease: EASE.inOut }, 0.4);
 
@@ -305,7 +293,7 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
         id="route-transition-overlay"
         aria-hidden="true"
         className="fixed inset-0 z-[45] flex items-center justify-center bg-[var(--color-charcoal)] pointer-events-none"
-        style={{ clipPath: 'inset(100% 0% 0% 0%)' }}
+        style={{ clipPath: 'inset(100% 0% 0% 0%)', willChange: 'clip-path' }}
       >
         <div ref={logoRef} className="opacity-0">
           <Logo className="h-12 w-auto md:h-16" />
@@ -315,3 +303,4 @@ export function RouteTransition({ children }: { children: React.ReactNode }) {
     </RouteTransitionContext.Provider>
   );
 }
+

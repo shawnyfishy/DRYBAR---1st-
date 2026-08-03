@@ -1,15 +1,17 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
-import Lenis from 'lenis';
 import { useTranslations } from 'next-intl';
 import { gsap } from 'gsap';
 import { EASE, DUR } from '@/lib/motion';
 import { Logo } from '@/components/ui/Logo';
 import { useMenu } from './MenuProvider';
 import { TransitionLink } from '@/components/motion/RouteTransition';
+import { lockScroll, unlockScroll } from '@/lib/scrollLock';
+import { getServicesData } from '@/lib/services';
 
 export function OverlayMenu() {
+
   const { activeDrawer, close } = useMenu();
   const isOpen = activeDrawer === 'menu';
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -26,26 +28,24 @@ export function OverlayMenu() {
     const drawer = drawerRef.current;
     const links = drawer.querySelectorAll('.menu-item-link');
     const sections = drawer.querySelectorAll('.menu-section');
-    const pageContent = document.getElementById('page-content');
-
-    const lenisInstance = (window as any).lenisInstance as Lenis | undefined;
 
     if (isOpen) {
-      if (lenisInstance) lenisInstance.stop();
+      lockScroll();
       closeButtonRef.current?.focus();
-      gsap.set(overlay, { autoAlpha: 1 });
+      gsap.set(overlay, { autoAlpha: 1, pointerEvents: 'auto' });
 
       const tl = gsap.timeline({ defaults: { duration: DUR.page, ease: EASE.soft } });
       tl.fromTo(drawer, { xPercent: -100 }, { xPercent: 0 }, 0);
       tl.fromTo(links, { y: 25, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.05, delay: 0.2 }, 0)
         .fromTo(sections, { opacity: 0 }, { opacity: 1, duration: 0.4, delay: 0.3 }, 0);
     } else {
-      if (lenisInstance) lenisInstance.start();
+      unlockScroll();
 
       const tl = gsap.timeline({
         defaults: { duration: 0.6, ease: EASE.soft },
         onComplete: () => gsap.set(overlay, { autoAlpha: 0 }),
       });
+      gsap.set(overlay, { pointerEvents: 'none' });
       tl.to(drawer, { xPercent: -100 }, 0);
     }
 
@@ -77,6 +77,7 @@ export function OverlayMenu() {
       window.removeEventListener('keydown', handleKeyDown);
     };
   }, [isOpen, close]);
+
 
   return (
     <div
@@ -132,10 +133,26 @@ export function OverlayMenu() {
               </TransitionLink>
               <TransitionLink
                 href="/gifts"
-                className="menu-item-link flex items-center gap-2 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
+                className="menu-item-link flex flex-col items-start gap-0.5 transition-colors hover:text-[var(--color-yellow)] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-yellow)] py-1"
               >
-                {t('gifts')}
+                <span>Memberships & Gifts</span>
+                <span className="text-[0.6875rem] tracking-[0.15em] uppercase text-[var(--color-yellow)] font-medium">
+                  {(() => {
+                    const tier = getServicesData().memberships
+                      .filter((m) => m.benefit_percent === 50)
+                      .sort((a, b) => a.sessions - b.sessions)[0];
+                    const n = tier ? tier.sessions : 6;
+                    const ordinals: Record<number, string> = {
+                      1: 'First', 2: 'Second', 3: 'Third', 4: 'Fourth', 5: 'Fifth',
+                      6: 'Sixth', 7: 'Seventh', 8: 'Eighth', 9: 'Ninth', 10: 'Tenth',
+                    };
+                    const ord = ordinals[n] || `${n}th`;
+                    return `${ord} blowout half price`;
+                  })()}
+                </span>
               </TransitionLink>
+
+
             </nav>
           </div>
 

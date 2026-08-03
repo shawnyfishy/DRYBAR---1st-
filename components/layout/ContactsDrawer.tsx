@@ -5,6 +5,7 @@ import { useMenu } from './MenuProvider';
 import { gsap } from 'gsap';
 import { useGsap } from '@/components/motion/useGsap';
 import { whatsappHref } from '@/lib/whatsapp';
+import { lockScroll, unlockScroll } from '@/lib/scrollLock';
 
 export function ContactsDrawer() {
   const { activeDrawer, close } = useMenu();
@@ -21,6 +22,7 @@ export function ContactsDrawer() {
       const items = content.querySelectorAll('.contact-item');
 
       if (isOpen) {
+        lockScroll();
         gsap.set(overlay, { autoAlpha: 1, pointerEvents: 'auto' });
         const tl = gsap.timeline({ defaults: { duration: 0.6, ease: 'power3.out' } });
 
@@ -32,6 +34,7 @@ export function ContactsDrawer() {
             0
           );
       } else {
+        unlockScroll();
         const tl = gsap.timeline({
           defaults: { duration: 0.5, ease: 'power3.in' },
           onComplete: () => gsap.set(overlay, { autoAlpha: 0, pointerEvents: 'none' }),
@@ -42,6 +45,7 @@ export function ContactsDrawer() {
     overlayRef,
     [isOpen]
   );
+
 
   return (
     <div

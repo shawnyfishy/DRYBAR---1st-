@@ -4,77 +4,94 @@ import React, { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { usePathname } from 'next/navigation';
 import { LENIS, registerGsapPlugins } from '@/lib/motion';
 
 export function SmoothScrollProvider({ children }: { children: React.ReactNode }) {
   const lenisRef = useRef<Lenis | null>(null);
-  const pathname = usePathname();
 
   useEffect(() => {
     registerGsapPlugins();
+    ScrollTrigger.config({ ignoreMobileResize: true });
 
-    // Check prefers-reduced-motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-      return;
-    }
+    const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    // Instantiate Lenis smooth scroll
-    const lenis = new Lenis({
-      lerp: LENIS.lerp,
-      wheelMultiplier: LENIS.wheelMultiplier,
-      touchMultiplier: LENIS.touchMultiplier,
-      smoothWheel: LENIS.smoothWheel,
-      syncTouch: LENIS.syncTouch,
-      autoRaf: LENIS.autoRaf,
-    });
+    let lenis: Lenis | null = null;
+    let tickHandler: ((time: number) => void) | null = null;
 
-    lenisRef.current = lenis;
-    // Exposed so components outside this provider (e.g. OverlayMenu) can
-    // call lenis.stop()/start() — without this, that call was silently a
-    // no-op since window.lenisInstance was never assigned, and the menu's
-    // scroll-lock never actually engaged.
-    (window as any).lenisInstance = lenis;
-
-    // Connect Lenis scroll event to ScrollTrigger
-    lenis.on('scroll', () => {
-      ScrollTrigger.update();
-    });
-
-    // Single rAF ticker loop: Drive Lenis via GSAP ticker
-    const tickHandler = (time: number) => {
-      lenis.raf(time * 1000);
-    };
-
-    gsap.ticker.add(tickHandler);
-    gsap.ticker.lagSmoothing(0);
-
-    // Refresh ScrollTrigger after fonts load
-    if (typeof document !== 'undefined' && document.fonts) {
-      document.fonts.ready.then(() => {
-        ScrollTrigger.refresh();
-      });
-    }
-
-    return () => {
-      gsap.ticker.remove(tickHandler);
-      lenis.destroy();
-      lenisRef.current = null;
-      if ((window as any).lenisInstance === lenis) {
+    const destroyLenis = () => {
+      if (tickHandler) {
+        gsap.ticker.remove(tickHandler);
+        tickHandler = null;
+      }
+      if (lenis) {
+        lenis.destroy();
+        lenis = null;
+        lenisRef.current = null;
+      }
+      if ((window as any).lenisInstance) {
         delete (window as any).lenisInstance;
       }
-      // Kill all ScrollTriggers to prevent memory & context leaks
+    };
+
+    const setupLenis = () => {
+      const canSmooth = hoverQuery.matches;
+      const prefersReducedMotion = motionQuery.matches;
+
+      if (!canSmooth || prefersReducedMotion) {
+        destroyLenis();
+        return;
+      }
+
+      if (lenis) return;
+
+      lenis = new Lenis({
+        lerp: LENIS.lerp,
+        wheelMultiplier: LENIS.wheelMultiplier,
+        touchMultiplier: LENIS.touchMultiplier,
+        smoothWheel: LENIS.smoothWheel,
+        syncTouch: LENIS.syncTouch,
+        autoRaf: LENIS.autoRaf,
+      });
+
+      lenisRef.current = lenis;
+      (window as any).lenisInstance = lenis;
+
+      lenis.on('scroll', () => {
+        ScrollTrigger.update();
+      });
+
+      tickHandler = (time: number) => {
+        lenis?.raf(time * 1000);
+      };
+
+      gsap.ticker.add(tickHandler);
+      gsap.ticker.lagSmoothing(500, 33);
+
+      if (typeof document !== 'undefined' && document.fonts) {
+        document.fonts.ready.then(() => {
+          ScrollTrigger.refresh();
+        });
+      }
+    };
+
+    setupLenis();
+
+    const handleCapabilityChange = () => {
+      setupLenis();
+    };
+
+    hoverQuery.addEventListener('change', handleCapabilityChange);
+    motionQuery.addEventListener('change', handleCapabilityChange);
+
+    return () => {
+      hoverQuery.removeEventListener('change', handleCapabilityChange);
+      motionQuery.removeEventListener('change', handleCapabilityChange);
+      destroyLenis();
       ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 
-  // Trigger ScrollTrigger refresh on route change
-  useEffect(() => {
-    if (lenisRef.current) {
-      ScrollTrigger.refresh();
-    }
-  }, [pathname]);
-
   return <>{children}</>;
 }
+
