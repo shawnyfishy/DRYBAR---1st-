@@ -2,6 +2,7 @@ import React from 'react';
 import { Header } from '@/components/layout/Header';
 import { InfoFooter } from '@/components/layout/InfoFooter';
 import { CtaRow } from '@/components/ui/CtaRow';
+import { GiftCardVisual } from '@/components/ui/GiftCardVisual';
 import { getServicesData } from '@/lib/services';
 import { Reveal } from '@/components/motion/Reveal';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
@@ -113,6 +114,7 @@ export default function GiftsPage() {
               Treat someone to an hour that is theirs. Digital gift card inquiries and purchases are handled directly.
             </p>
           </div>
+          <GiftCardVisual />
           <div className="flex justify-start">
             <CtaRow
               label="Inquire About Gift Cards"
