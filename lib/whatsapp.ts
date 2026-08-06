@@ -12,6 +12,7 @@ export type WhatsAppIntent =
   | { kind: 'booking_service'; service: string }
   | { kind: 'membership'; plan: string }
   | { kind: 'gift_card' }
+  | { kind: 'gift_card_amount'; amount: number }
   | { kind: 'reschedule' };
 
 function messageFor(intent: WhatsAppIntent): string {
@@ -24,6 +25,8 @@ function messageFor(intent: WhatsAppIntent): string {
       return `Hello Drybar Qatar, I am interested in the ${intent.plan} membership. Could you share the details and how to sign up?`;
     case 'gift_card':
       return 'Hello Drybar Qatar, I would like to purchase a gift card. Could you help me with the next steps?';
+    case 'gift_card_amount':
+      return `Hello Drybar Qatar, I would like to purchase a gift card for QAR ${intent.amount}. Could you help me with the next steps?`;
     case 'reschedule':
       return 'Hello Drybar Qatar, I have an existing appointment and would like to reschedule it.';
     case 'general':
