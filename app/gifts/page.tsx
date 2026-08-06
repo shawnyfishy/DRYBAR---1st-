@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { InfoFooter } from '@/components/layout/InfoFooter';
 import { CtaRow } from '@/components/ui/CtaRow';
 import { GiftCardVisual } from '@/components/ui/GiftCardVisual';
+import { GiftCardAmount } from '@/components/ui/GiftCardAmount';
 import { getServicesData } from '@/lib/services';
 import { Reveal } from '@/components/motion/Reveal';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
@@ -115,9 +116,10 @@ export default function GiftsPage() {
             </p>
           </div>
           <GiftCardVisual />
+          <GiftCardAmount />
           <div className="flex justify-start">
             <CtaRow
-              label="Inquire About Gift Cards"
+              label="Ask About Gift Cards"
               destination="whatsapp"
               campaign="gift_card_inquire"
               whatsappIntent={{ kind: 'gift_card' }}
