@@ -47,7 +47,7 @@ export function TheOneThing() {
           <Parallax>
             <div className="overflow-hidden rounded-xl shadow-xl border border-[var(--color-charcoal)]/10 aspect-[9/16] bg-white">
               <img
-                src="/images/2.webp"
+                src="/images/newpic.webp"
                 alt="Drybar Philosophy Blowout Styling"
                 className="h-full w-full object-cover"
                 loading="lazy"
