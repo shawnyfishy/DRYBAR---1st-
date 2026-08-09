@@ -8,7 +8,7 @@ export function GiftCardVisual() {
         <div className="absolute right-0 top-0 w-[78%] z-0 rotate-[4deg] sm:rotate-[6deg]">
           <img
             src="/giftcard%20images/giftcard-back.webp"
-            alt="Drybar Qatar gift card, reverse side"
+            alt="Drybar Qatar digital blowout gift card reverse side"
             width={1600}
             height={1008}
             className="h-auto w-full"
@@ -26,7 +26,7 @@ export function GiftCardVisual() {
         <div className="absolute bottom-0 left-0 w-[78%] z-10 rotate-[-3deg] sm:rotate-[-4deg] motion-safe:transition-transform motion-safe:duration-500 motion-safe:ease-out motion-safe:hover:-translate-y-1.5 motion-safe:hover:rotate-[-2deg]">
           <img
             src="/giftcard%20images/giftcard-front.webp"
-            alt="Drybar Qatar gift card, front"
+            alt="Drybar Qatar signature blowout gift card front"
             width={1600}
             height={1008}
             className="h-auto w-full"

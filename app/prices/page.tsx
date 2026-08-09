@@ -7,6 +7,50 @@ import { getServicesData } from '@/lib/services';
 import { Reveal } from '@/components/motion/Reveal';
 import { safeText } from '@/lib/content';
 
+import type { Metadata } from 'next';
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://drybar.qa';
+
+export const metadata: Metadata = {
+  title: 'Blowout Price List & Hair Styling Rates',
+  description: 'Explore signature blowout and hair styling prices at Drybar Qatar in QAR. Clear pricing by hair length starting from QAR 250 at Gewan Island, Doha.',
+  keywords: [
+    'Drybar Qatar prices',
+    'Blowout price list Doha',
+    'Hair styling cost Qatar',
+    'Blow dry bar price list Doha',
+    'QAR hair styling rates',
+    'Gewan Island blowout cost'
+  ],
+  alternates: {
+    canonical: `${siteUrl}/prices`,
+  },
+  openGraph: {
+    title: 'Blowout Price List & Hair Styling Rates | Drybar Qatar',
+    description: 'Explore signature blowout and hair styling prices at Drybar Qatar in QAR. Clear pricing by hair length starting from QAR 250 at Gewan Island, Doha.',
+    url: `${siteUrl}/prices`,
+  },
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': siteUrl
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Price List',
+      'item': `${siteUrl}/prices`
+    }
+  ]
+};
+
 // STEP 7 Feature Flag: Home Services (default OFF)
 const SHOW_HOME_SERVICES = false;
 
@@ -17,6 +61,10 @@ export default function PricesPage() {
 
   return (
     <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <Header />
 
       <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 py-20 sm:px-6 md:p-12 md:pt-28 gap-8 sm:gap-12">

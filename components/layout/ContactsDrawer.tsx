@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import { useMenu } from './MenuProvider';
 import { gsap } from 'gsap';
 import { useGsap } from '@/components/motion/useGsap';
@@ -8,6 +9,7 @@ import { whatsappHref } from '@/lib/whatsapp';
 import { lockScroll, unlockScroll } from '@/lib/scrollLock';
 
 export function ContactsDrawer() {
+  const t = useTranslations('footer');
   const { activeDrawer, close } = useMenu();
   const isOpen = activeDrawer === 'contacts';
   const overlayRef = useRef<HTMLDivElement>(null);
@@ -127,10 +129,10 @@ export function ContactsDrawer() {
               SALON HOURS
             </h3>
             <p className="text-base text-[var(--color-cream)]">
-              Saturday – Thursday: 10:00 AM – 10:00 PM
+              {t('hours')}
             </p>
             <p className="text-base text-[var(--color-cream)]/80">
-              Friday: 1:00 PM – 10:00 PM
+              {t('hoursFriday')}
             </p>
           </div>
         </div>

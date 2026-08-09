@@ -25,7 +25,7 @@
     "displayLine3": "yours.",
     "statement": "No cuts. No colour. One blowout, and every hour we have spent learning to do it beautifully.",
     "cta": "Book a chair",
-    "meta": "Open every day, 9am to 9pm",
+    "meta": "Sat to Thu, 10am to 9pm · Fri, 2pm to 9pm",
     "scrollCue": "Scroll"
   },
   "theOneThing": {
@@ -80,8 +80,8 @@
     "address": "Gewan Island, The Pearl, Doha, Qatar",
     "mapsLabel": "View on Google Maps",
     "hoursLabel": "Opening Hours",
-    "hours": "Every day, 9:00am – 9:00pm",
-    "ramadanNote": "Hours shift during the holy month of Ramadan.",
+    "hours": "Saturday – Thursday: 10:00am – 9:00pm",
+    "hoursFriday": "Friday: 2:00pm – 9:00pm",
     "contactLabel": "Contact & Booking",
     "whatsappLabel": "Message on WhatsApp",
     "phoneLabel": "Call Us",

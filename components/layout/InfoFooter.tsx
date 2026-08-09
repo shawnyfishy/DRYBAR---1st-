@@ -46,8 +46,8 @@ export function InfoFooter() {
             <p className="text-[clamp(1rem,3.5vw,1.125rem)] font-normal leading-relaxed text-[var(--color-cream)]">
               {t('hours')}
             </p>
-            <p className="text-xs text-[var(--color-warmgrey)]">
-              {t('ramadanNote')}
+            <p className="text-[clamp(1rem,3.5vw,1.125rem)] font-normal leading-relaxed text-[var(--color-cream)]">
+              {t('hoursFriday')}
             </p>
           </div>
 

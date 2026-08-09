@@ -55,6 +55,13 @@ This document consolidates every client action item, configuration dependency, a
 - **What breaks without it**: Section remains hidden behind feature flag `SHOW_HOME_SERVICES = false`.
 - **Smallest unblocking answer**: Provide home service pricing, travel fee, and coverage area if home blowouts will be offered.
 
+### 2.7 Girlie Club Monthly Membership Deliverables
+- **Who it blocks**: High-resolution branding lockup & full terms on `/gifts`.
+- **Items required**:
+  1. **Script Wordmark Vector**: Provide "Girlie Club" wordmark as an SVG or transparent PNG file to replace the live text lockup.
+  2. **"STARTING FROM" Pricing Structure**: Confirm whether "STARTING FROM" reflects hair-length tiering (Short / Medium / Long / Extra Long).
+  3. **Terms & Conditions**: Provide full terms and conditions (minimum commitment, auto-renewal, cancellation policy, roll-over expiration rules).
+
 ---
 
 ## 3. FOR THE CLIENT'S AWARENESS (Brand Kit Edition 1.2 Updates Needed)
@@ -69,5 +76,5 @@ This document consolidates every client action item, configuration dependency, a
 ## 4. NICE TO HAVE (Future Enhancements)
 
 - [ ] **Helvetica Now Web License**: Confirm web font licensing for production host.
-- [ ] **Ramadan Hours Shift**: Confirm exact operating hours during the holy month of Ramadan.
+- [x] **Ramadan Hours Shift**: Resolved — Ramadan references removed at client request; official opening hours confirmed as Saturday–Thursday 10:00 AM – 9:00 PM and Friday 2:00 PM – 9:00 PM.
 - [ ] **Analytics Selection**: Select analytics platform (Google Analytics / Plausible) to listen to `drybar:cta_click` events.

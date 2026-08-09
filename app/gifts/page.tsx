@@ -9,6 +9,73 @@ import { Reveal } from '@/components/motion/Reveal';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
 import { FAQ_ITEMS, FAQ_HEADING, FAQ_SUBHEADING } from '@/lib/faq';
 
+import { GirlieClub } from '@/components/sections/GirlieClub';
+
+import type { Metadata } from 'next';
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://drybar.qa';
+
+export const metadata: Metadata = {
+  title: 'Girlie Club Monthly Memberships & Gift Cards',
+  description: 'Give the gift of great hair with Drybar Qatar Girlie Club monthly blowout memberships, session packages, and digital gift vouchers at Gewan Island, Doha.',
+  keywords: [
+    'Girlie Club Drybar Qatar',
+    'Monthly blowout membership Doha',
+    'Drybar Qatar gift card',
+    'Hair gift card Qatar',
+    'Beauty gift voucher Doha',
+    'Blowout membership Doha',
+    'Drybar membership Qatar',
+    'Gewan Island hair gifts'
+  ],
+  alternates: {
+    canonical: `${siteUrl}/gifts`,
+  },
+  openGraph: {
+    title: 'Blowout Memberships & Digital Gift Cards | Drybar Qatar',
+    description: 'Give the gift of great hair with Drybar Qatar blowout memberships and digital gift vouchers. Enjoy exclusive session packages at Gewan Island, Doha.',
+    url: `${siteUrl}/gifts`,
+  },
+};
+
+const breadcrumbJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  'itemListElement': [
+    {
+      '@type': 'ListItem',
+      'position': 1,
+      'name': 'Home',
+      'item': siteUrl
+    },
+    {
+      '@type': 'ListItem',
+      'position': 2,
+      'name': 'Gifts & Memberships',
+      'item': `${siteUrl}/gifts`
+    }
+  ]
+};
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  'mainEntity': FAQ_ITEMS.map((faq) => ({
+    '@type': 'Question',
+    'name': faq.question,
+    'acceptedAnswer': {
+      '@type': 'Answer',
+      'text': faq.answer
+        .map((block) => {
+          if (block.type === 'paragraph' || block.type === 'note') return block.text;
+          if (block.type === 'list') return (block.label ? `${block.label}: ` : '') + block.items.join(', ');
+          return '';
+        })
+        .join(' '),
+    },
+  })),
+};
+
 export const dynamic = 'force-static';
 
 export default function GiftsPage() {
@@ -17,6 +84,14 @@ export default function GiftsPage() {
 
   return (
     <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <Header />
       <main className="mx-auto flex w-full max-w-[1440px] flex-1 flex-col px-4 py-20 sm:px-6 md:p-12 md:pt-28 gap-10 sm:gap-16">
         {/* TITLE & SUBTITLE */}
@@ -62,7 +137,7 @@ export default function GiftsPage() {
                     <div className="overflow-hidden rounded-xl aspect-[4/5] bg-[var(--color-cream)] border border-[var(--color-warmgrey)]/20">
                       <img
                         src={`/images/${10 + idx}.webp`}
-                        alt={`Drybar Membership ${item.sessions} Sessions`}
+                        alt={`Drybar Qatar membership package - ${item.sessions_label_en} (${item.benefit_en})`}
                         className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
                         loading="lazy"
                         decoding="async"
@@ -103,6 +178,11 @@ export default function GiftsPage() {
               );
             })}
           </div>
+        </Reveal>
+
+        {/* GIRLIE CLUB MONTHLY MEMBERSHIP SECTION */}
+        <Reveal>
+          <GirlieClub />
         </Reveal>
 
         {/* GIFT CARDS SECTION SHELL (STEP 4) */}

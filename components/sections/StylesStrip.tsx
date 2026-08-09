@@ -47,7 +47,7 @@ export function StylesStrip() {
                     <Parallax speed={0.2}>
                       <img
                         src={imageSrc}
-                        alt={style.name_en}
+                        alt={`Drybar ${style.name_en} signature blowout look at Drybar Qatar`}
                         className="h-full w-full object-cover scale-110 transition-transform duration-500 hover:scale-115"
                         loading="lazy"
                       />

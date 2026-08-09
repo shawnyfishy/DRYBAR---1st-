@@ -34,7 +34,7 @@ export function CtaRow({ label, destination = 'book', campaign = 'book_now', wha
       <a
         href={cta.href}
         target={cta.target}
-        rel="noopener"
+        rel={cta.target === '_blank' ? 'noopener noreferrer' : undefined}
         onClick={handleClick}
         className="inline-flex items-center justify-center rounded-full bg-[var(--color-yellow)] px-8 py-4 text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-charcoal)] transition-transform hover:scale-[1.02] active:scale-[0.985] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--color-charcoal)]"
       >

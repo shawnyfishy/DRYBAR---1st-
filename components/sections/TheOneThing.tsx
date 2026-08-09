@@ -48,7 +48,7 @@ export function TheOneThing() {
             <div className="overflow-hidden rounded-xl shadow-xl border border-[var(--color-charcoal)]/10 aspect-[9/16] bg-white">
               <img
                 src="/images/newpic.webp"
-                alt="Drybar Philosophy Blowout Styling"
+                alt="Drybar Qatar signature blowout styling at Gewan Island flagship salon in Doha"
                 className="h-full w-full object-cover"
                 loading="lazy"
               />

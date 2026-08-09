@@ -71,7 +71,7 @@ export function CtaIndex() {
                   top: `${cursorPos.y}px`,
                 }}
               >
-                <img src={row.imageSrc} alt={row.label} className="h-full w-full object-cover border-2 border-[var(--color-charcoal)] rounded-lg" />
+                <img src={row.imageSrc} alt={`Drybar Qatar ${row.label} section preview`} className="h-full w-full object-cover border-2 border-[var(--color-charcoal)] rounded-lg" />
               </div>
 
               {/* ROW LABEL */}

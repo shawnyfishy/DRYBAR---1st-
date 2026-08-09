@@ -640,7 +640,7 @@ SECTIONS, in order.
 6 · InfoFooter. Ground --grad-sumi, so text is cream on dark. Everything the brief asks for at the bottom of the second page, and it appears on all three routes:
    Location: Gewan Island, The Pearl, Doha. GEWAN ISLAND ONLY. Do not mention The Gate Mall, do not mention any third location, not in copy, not in a comment, not in alt text, not in the sitemap. Brand Kit page 06 restricts both.
    Google Maps link: leave the href as an env var placeholder. Do not link a pin you have not verified resolves to the actual flagship.
-   Hours: daily 9:00am to 9:00pm, seven days a week. Add a line that hours shift during Ramadan.
+   Hours: Saturday – Thursday 10:00am – 9:00pm, Friday 2:00pm – 9:00pm. (Ramadan references removed at client request; updated to new official opening hours).
    Contact: phone and WhatsApp +974 7773 0600, tel: and wa.me links.
    Instagram: @thedrybar.qatar, the only social channel. TikTok, Snapchat and Facebook are all inactive and Brand Kit page 11 says do not create or imply an account, so no other social links or icons exist anywhere in this build.
    Booking and cancellation policies: render the section with a clear TODO_POLICY_TEXT marker. This text is not in either source document and it must match the actual Zenoti configuration, so it cannot be written by us. Flag it, do not invent it.
@@ -920,7 +920,7 @@ STEP 4 · Cross-browser
 Test Safari iOS, Chrome Android, Safari macOS, Chrome desktop, Firefox desktop. Known risk areas for this build, check each explicitly: 100dvh behaviour with the iOS address bar, Lenis interacting with iOS momentum, backdrop-filter cost if used anywhere, SVG filter rendering differences, position sticky and pin combinations, and clip-path animation performance in Safari.
 
 STEP 5 · Metadata and SEO
-Title, meta description, Open Graph and Twitter card. og:url must be an absolute URL from an env var. Note for the record: the reference site renders og:url as "undefined/" because of exactly this mistake, so verify ours resolves properly. Add a favicon and apple-touch-icon from the logo. Add LocalBusiness structured data covering the flagship only: Gewan Island, The Pearl, Doha, daily 9am to 9pm, phone +974 7773 0600. Do not add a second location to structured data. robots.txt and sitemap.xml exclude /dev/*.
+Title, meta description, Open Graph and Twitter card. og:url must be an absolute URL from an env var. Note for the record: the reference site renders og:url as "undefined/" because of exactly this mistake, so verify ours resolves properly. Add a favicon and apple-touch-icon from the logo. Add LocalBusiness structured data covering the flagship only: Gewan Island, The Pearl, Doha, Saturday–Thursday 10:00 to 21:00 and Friday 14:00 to 21:00, phone +974 7773 0600. Do not add a second location to structured data. robots.txt and sitemap.xml exclude /dev/*.
 
 STEP 6 · Final content sweep
 Re-read docs/brand-constraints.md and verify the built site against every line. Specifically confirm: nothing implies cutting or colouring, no medical or repair or growth claim exists, no alcohol or bar theming exists, no second or third location is named anywhere including comments and alt text, no social channel other than Instagram appears, the logo is unmodified, and every price and membership figure matches brand/services.json exactly. Also grep the built output for the string "257" and for any Brand Kit price that services.json supersedes, specifically 425, 275 and 181. None of them may appear.
@@ -956,7 +956,7 @@ Consolidate everything the client owes us, grouped and prioritised:
   BLOCKING SHIP: live Zenoti booking and manage URLs, booking and cancellation policy text matching the Zenoti configuration, verified Google Maps pin.
   BLOCKING COMPLETENESS: durations for all seven services, home services data, gift card fulfilment path and denominations, whether "packages" means the membership tiers or something separate, the seven missing membership fields, terms and conditions text, official primary lockup and Qatar badge vectors, Arabic copy from a native Gulf writer.
   FOR THE CLIENT'S AWARENESS, not blocking: the Brand Kit's pricing on page 05 is stale against their own price list, so Edition 1.2 needs updating, including the mandated "from QAR 257" phrase and the sentence on page 04 stating that price does not follow the finish chosen.
-  NICE TO HAVE: Helvetica Now web licence, whether The Gate Mall may be announced and when, Ramadan hours, analytics choice.
+  NICE TO HAVE: Helvetica Now web licence, whether The Gate Mall may be announced and when, Ramadan hours (removed at client request; updated to official hours Sat–Thu 10am–9pm, Fri 2pm–9pm), analytics choice.
 For each item say who it blocks, what breaks without it, and the smallest possible answer that unblocks us.
 
 STEP 4 · docs/reference-fidelity.md

@@ -54,6 +54,38 @@ export interface MembershipTier {
   extras_en: string[];
 }
 
+export interface GirlieClubTier {
+  id: string;
+  order: number;
+  name_en: string;
+  frequency_en: string;
+  qualifier_en: string;
+  price: number;
+  currency: string;
+  billing_period_en: string;
+  icon: string;
+}
+
+export interface GirlieClubPerk {
+  id: string;
+  order: number;
+  title_en: string;
+  body_en: string;
+  icon: string;
+}
+
+export interface GirlieClubData {
+  provenance: string;
+  eyebrow_en: string;
+  brand_line_en: string;
+  wordmark_en: string;
+  subtitle_en: string;
+  tagline_en: string;
+  perks_heading_en: string;
+  tiers: GirlieClubTier[];
+  perks: GirlieClubPerk[];
+}
+
 export interface ServicesData {
   meta: MetaData;
   lengthTiers: LengthTier[];
@@ -63,6 +95,7 @@ export interface ServicesData {
   addOns: AddOnService[];
   membershipHeading: string;
   memberships: MembershipTier[];
+  girlieClub: GirlieClubData;
 }
 
 export function getServicesData(): ServicesData {
@@ -75,5 +108,6 @@ export function getServicesData(): ServicesData {
     addOns: rawServicesData.add_ons.services,
     membershipHeading: rawServicesData.membership.heading_en,
     memberships: rawServicesData.membership.tiers,
+    girlieClub: rawServicesData.girlieClub,
   };
 }
