@@ -122,7 +122,7 @@
   "membership": {
     "heading_en": "Membership",
     "heading_ar": "TODO_AR",
-    "tiers": [
+    "archived_session_packages": [
       {
         "id": "m3",
         "order": 1,
@@ -151,6 +151,7 @@
         "extras_en": ["Complimentary hair treatment"]
       }
     ],
+    "archived_note": "Retired by client on 2026-08-12. Superseded by girlieClub. Retained for provenance. Not rendered anywhere on the site.",
     "extras_placement_note": "On the PDF the complimentary hair treatment is printed with a plus sign directly beneath the 8 session block, so it reads as belonging to that tier. It is attached to m8 here. If the client says it applies to all three tiers, move it, but do not change any percentage or session count.",
     "copy_rule": "The word session is on the Brand Kit's AVOID list for describing a visit. It is unavoidable here because it is the membership's own unit of measure as printed. Use it inside membership copy only and nowhere else on the site."
   },

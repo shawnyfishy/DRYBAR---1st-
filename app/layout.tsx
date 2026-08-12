@@ -8,7 +8,6 @@ import { Preloader } from '@/components/layout/Preloader';
 import { MenuProvider } from '@/components/layout/MenuProvider';
 import { OverlayMenu } from '@/components/layout/OverlayMenu';
 import { ContactsDrawer } from '@/components/layout/ContactsDrawer';
-import { MembershipPill } from '@/components/layout/MembershipPill';
 import { RouteTransition } from '@/components/motion/RouteTransition';
 
 
@@ -365,7 +364,6 @@ export default function RootLayout({
                 {/* Menu & Contacts drawers live outside #page-content */}
                 <OverlayMenu />
                 <ContactsDrawer />
-                <MembershipPill />
                 <div
 
 

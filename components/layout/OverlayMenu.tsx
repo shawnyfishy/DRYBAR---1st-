@@ -8,7 +8,6 @@ import { Logo } from '@/components/ui/Logo';
 import { useMenu } from './MenuProvider';
 import { TransitionLink } from '@/components/motion/RouteTransition';
 import { lockScroll, unlockScroll } from '@/lib/scrollLock';
-import { getServicesData } from '@/lib/services';
 
 export function OverlayMenu() {
 
@@ -137,18 +136,7 @@ export function OverlayMenu() {
               >
                 <span>Memberships & Gifts</span>
                 <span className="text-[0.6875rem] tracking-[0.15em] uppercase text-[var(--color-yellow)] font-medium">
-                  {(() => {
-                    const tier = getServicesData().memberships
-                      .filter((m) => m.benefit_percent === 50)
-                      .sort((a, b) => a.sessions - b.sessions)[0];
-                    const n = tier ? tier.sessions : 6;
-                    const ordinals: Record<number, string> = {
-                      1: 'First', 2: 'Second', 3: 'Third', 4: 'Fourth', 5: 'Fifth',
-                      6: 'Sixth', 7: 'Seventh', 8: 'Eighth', 9: 'Ninth', 10: 'Tenth',
-                    };
-                    const ord = ordinals[n] || `${n}th`;
-                    return `${ord} blowout half price`;
-                  })()}
+                  Girlie Club monthly memberships
                 </span>
               </TransitionLink>
 

@@ -44,16 +44,6 @@ export interface AddOnService {
   render_rule?: string;
 }
 
-export interface MembershipTier {
-  id: string;
-  order: number;
-  sessions: number;
-  sessions_label_en: string;
-  benefit_en: string;
-  benefit_percent: number;
-  extras_en: string[];
-}
-
 export interface GirlieClubTier {
   id: string;
   order: number;
@@ -94,7 +84,6 @@ export interface ServicesData {
   addOnsHeading: string;
   addOns: AddOnService[];
   membershipHeading: string;
-  memberships: MembershipTier[];
   girlieClub: GirlieClubData;
 }
 
@@ -107,7 +96,6 @@ export function getServicesData(): ServicesData {
     addOnsHeading: rawServicesData.add_ons.heading_en,
     addOns: rawServicesData.add_ons.services,
     membershipHeading: rawServicesData.membership.heading_en,
-    memberships: rawServicesData.membership.tiers,
     girlieClub: rawServicesData.girlieClub,
   };
 }

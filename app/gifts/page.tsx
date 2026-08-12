@@ -4,7 +4,6 @@ import { InfoFooter } from '@/components/layout/InfoFooter';
 import { CtaRow } from '@/components/ui/CtaRow';
 import { GiftCardVisual } from '@/components/ui/GiftCardVisual';
 import { GiftCardAmount } from '@/components/ui/GiftCardAmount';
-import { getServicesData } from '@/lib/services';
 import { Reveal } from '@/components/motion/Reveal';
 import { FaqAccordion } from '@/components/ui/FaqAccordion';
 import { FAQ_ITEMS, FAQ_HEADING, FAQ_SUBHEADING } from '@/lib/faq';
@@ -17,15 +16,13 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://drybar.qa';
 
 export const metadata: Metadata = {
   title: 'Girlie Club Monthly Memberships & Gift Cards',
-  description: 'Give the gift of great hair with Drybar Qatar Girlie Club monthly blowout memberships, session packages, and digital gift vouchers at Gewan Island, Doha.',
+  description: 'Give the gift of great hair with Drybar Qatar Girlie Club monthly blowout memberships and digital gift vouchers at Gewan Island, Doha.',
   keywords: [
     'Girlie Club Drybar Qatar',
     'Monthly blowout membership Doha',
     'Drybar Qatar gift card',
     'Hair gift card Qatar',
     'Beauty gift voucher Doha',
-    'Blowout membership Doha',
-    'Drybar membership Qatar',
     'Gewan Island hair gifts'
   ],
   alternates: {
@@ -33,7 +30,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Blowout Memberships & Digital Gift Cards | Drybar Qatar',
-    description: 'Give the gift of great hair with Drybar Qatar blowout memberships and digital gift vouchers. Enjoy exclusive session packages at Gewan Island, Doha.',
+    description: 'Give the gift of great hair with Drybar Qatar blowout memberships and digital gift vouchers at Gewan Island, Doha.',
     url: `${siteUrl}/gifts`,
   },
 };
@@ -79,9 +76,6 @@ const faqJsonLd = {
 export const dynamic = 'force-static';
 
 export default function GiftsPage() {
-  const services = getServicesData();
-  const memberships = services.memberships;
-
   return (
     <div className="flex min-h-screen flex-col [background-image:var(--backgroundImage-grad-asagiri)]">
       <script
@@ -97,87 +91,11 @@ export default function GiftsPage() {
         {/* TITLE & SUBTITLE */}
         <Reveal className="flex flex-col gap-3">
           <h1 className="text-[clamp(2rem,7vw,4.5rem)] font-normal leading-[0.94] tracking-[-0.022em] text-[var(--color-charcoal)]">
-            {services.membershipHeading} & Gift Cards
+            Memberships & Gift Cards
           </h1>
           <p className="text-[clamp(1rem,3.5vw,1.125rem)] text-[var(--color-warmgrey)]">
-            Blowout series and gift options for regular visits
+            Monthly blowout memberships and gift options for regular visits
           </p>
-        </Reveal>
-
-        {/* MEMBERSHIPS CARDS (STEP 1) */}
-        <Reveal className="flex flex-col gap-6">
-          <h2 className="text-[clamp(1.25rem,4.4vw,1.875rem)] font-medium text-[var(--color-charcoal)]">
-            {services.membershipHeading} Tiers
-          </h2>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {memberships.map((item, idx) => {
-              // Ground middle tier (6 Sessions) on --grad-yuzu per Phase 1 gradient rules (exactly 1 yuzu field per viewport)
-              const isAccent = idx === 1;
-
-              return (
-                <div
-                  key={item.id}
-                  className={`flex flex-col justify-between rounded-2xl border border-[var(--color-warmgrey)]/20 p-5 sm:p-8 shadow-sm transition-all duration-300 ${
-                    isAccent
-                      ? '[background-image:var(--backgroundImage-grad-yuzu)] border-[var(--color-yellow)]'
-                      : 'bg-white'
-                  }`}
-                >
-                  <div className="flex flex-col gap-6">
-                    {/* DOMINANT SESSION COUNT AT DISPLAY SCALE */}
-                    <div className="flex items-baseline justify-between">
-                      <span className="text-[clamp(3.5rem,8vw,5.5rem)] font-normal leading-none tabular-nums text-[var(--color-charcoal)]">
-                        {item.sessions}
-                      </span>
-                      <span className="text-[0.6875rem] font-medium tracking-[0.15em] uppercase text-[var(--color-warmgrey)]">
-                        {item.sessions_label_en}
-                      </span>
-                    </div>
-
-                    <div className="overflow-hidden rounded-xl aspect-[4/5] bg-[var(--color-cream)] border border-[var(--color-warmgrey)]/20">
-                      <img
-                        src={`/images/${10 + idx}.webp`}
-                        alt={`Drybar Qatar membership package - ${item.sessions_label_en} (${item.benefit_en})`}
-                        className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
-                        loading="lazy"
-                        decoding="async"
-                        fetchPriority="low"
-                      />
-                    </div>
-
-
-                    {/* BENEFIT AS ONE LINE BENEATH */}
-                    <p className="text-base font-medium leading-snug text-[var(--color-charcoal)]">
-                      {item.benefit_en}
-                    </p>
-
-                    {/* EXTRAS (Attached to 8 session tier only per printed price list) */}
-                    {item.extras_en && item.extras_en.length > 0 && (
-                      <div className="border-t border-[var(--color-warmgrey)]/20 pt-3">
-                        {item.extras_en.map((extra, eIdx) => (
-                          <span
-                            key={eIdx}
-                            className="inline-block text-xs font-medium text-[var(--color-charcoal)]"
-                          >
-                            + {extra}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="mt-8">
-                    <CtaRow
-                      label="Inquire via WhatsApp"
-                      destination="whatsapp"
-                      campaign="membership_inquire"
-                      whatsappIntent={{ kind: 'membership', plan: item.sessions_label_en }}
-                    />
-                  </div>
-                </div>
-              );
-            })}
-          </div>
         </Reveal>
 
         {/* GIRLIE CLUB MONTHLY MEMBERSHIP SECTION */}
